@@ -19,6 +19,15 @@ COLORS = {\
     "black_background": "\u001b[40m",
 }
 
+def print_art():
+    """
+    Open the file and print out the art onto the terminal
+    """
+    f = open("title_art.txt","r")
+    ascii = "".join(f.readlines())
+    title_tag = colorRep(ascii)
+    print(title_tag)
+
 
 def main():
     """
