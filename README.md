@@ -267,13 +267,12 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
 ## Tools
 
 ---
-
+  
+  *  [Free Currency Converter API](https://free.currencyconverterapi.com/)
   *  [Balsamiq Wireframes](https://balsamiq.com/)
   *  [Resizing Images](https://www.reduceimages.com/)
   *  [Reducing Images size](https://tinypng.com/)
   *  [Test for Responsiveness](https://ui.dev/amiresponsive)
-  *  [HTML validator](https://validator.w3.org/)
-  *  [CSS validation](https://jigsaw.w3.org/)
   *  [Contrast checker](https://dequeuniversity.com/)
   *  [Coolors.co](https://coolors.co/)
   *  [Font Awesome](https://fontawesome.com/)
@@ -355,24 +354,18 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
 
 ## Credits
 
-
-* [ReadMe table presentation](https://github.com/AdamBoley/The-Space-Marine-Legions)
+* [Importing your own module properly](https://youtu.be/GxCXiSk6no)
 
 * [ReadMe Table Inspiration](https://github.com/belovedpearl/Green_Space-PP1/blob/main/README.md)
 
 * [Code institute's template](https://github.com/Code-Institute-Org/gitpod-full-template)
 
-* [CSS Transition](https:youtu.be/EVze4Cq-dZ8)
+* [Typewriter effect](https://youtu.be/2h8e0tXHfk0)
 
-* [Progress Bar Tutorial](https://youtu.be/kjhsS4INZ9o)
-
-* [Learinng more about flex](https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/).
+* [Clear screen function](https://www.101computing.net/python-typing-text-effect/).
 
 *  [W3Schools](https://www.w3schools.com/), [Stack overflow](https://www.slackoverflow.com/) & [Mdn wed docs](https://developer.mozilla.org/en-US/) - Visited several times to learn different syntax used in the code.
 
-
-* Images: 
-Images used are from [Pexels](https://pexels.com)
 
 * Content Sources:
 
