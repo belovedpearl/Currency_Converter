@@ -18,6 +18,24 @@ COLORS = {\
     "cyan-background": "\u001b[46m",
     "black_background": "\u001b[40m",
 }
+def get_currencies():
+    """
+    Connect the base url and the currency link
+    Get the json file
+    list the values found in the returned 
+    """
+    # list of currencies provided in the API documentation
+    currency_link = f"api/v7/currencies?apiKey={key}"
+    url = BASE_URL + currency_link
+    # Send a get request to the base url
+    # Access the result key in the json file
+    data = get(url).json()['results']
+    # Convert the returned values to a list
+    data = list(data.items())
+    data.sort()
+
+    return data 
+
 
 def start_app():
     currencies = get_currencies() 
@@ -42,7 +60,7 @@ def start_app():
             exchange_rate(currency1, currency2)
         else:
             print("You have made an invalid choice.")
-            
+
 
 def colorRep(text):
     """
