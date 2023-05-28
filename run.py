@@ -6,6 +6,11 @@ import os
 from requests import get
 os.system("clear")
 
+# URL for the get request
+BASE_URL = "https://free.currconv.com/"
+key = config.API_KEY
+
+
 """ ANSI color codes """
 COLORS = {\
     "black": "\033[0;30m",
