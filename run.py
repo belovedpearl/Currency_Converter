@@ -18,3 +18,23 @@ COLORS = {\
     "cyan-background": "\u001b[46m",
     "black_background": "\u001b[40m",
 }
+
+
+def main():
+    """
+    Starts the application
+    """
+    print_art()
+    
+    print("Welcome to currency converter...\n")
+    print("What will you like to do today?\n")
+    start_app()
+
+
+    #username = checkName()
+        
+
+
+
+
+main()
