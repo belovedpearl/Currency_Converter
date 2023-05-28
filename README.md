@@ -1,6 +1,6 @@
-# EXPLORE - *Historic Centers Around the world*
+# Currency Converter - *Real time currency conversion*
 
-[View code here](https://github.com/belovedpearl/Historic_Center_Quiz_PP2)
+[View code here](https://github.com/belovedpearl/Currency_Converter)
 
 ![Responsiveness](assets/images/siteRepresentation/screen_responsive.webp)
 
@@ -40,10 +40,9 @@
 * [Tools](#tools)
 * [Testing](#testing)
      * [Validator Testing](#validator-testing)
-         * [HTML](#html)
-         * [CSS](#css)
-         * [JAVASCRIPT](#javascript)
-     * [Lighthouse Performance](#lighthouse-performance)
+         * [Pep8](#pep8)
+         * [Local Terminal](#local-terminal)
+         * [Heroku Terminal](#heroku-terminal)
      * [Functional Testing](#functional-testing)
 * [Credit](#credits)
 * [Acknowledgement](#acknowledgement)
@@ -294,42 +293,29 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
 
 ### Validator Testing
 
-#### HTML
+#### PEP8
 * No errors  were found when passed through the official [W3C Validator check](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbelovedpearl.github.io%2FHistoric_Center_Quiz_PP2%2F)
 
 
-![HTML Validation](assets/images/siteTest/htmlVal.webp)
+![Pep8 Validation](assets/images/siteTest/htmlVal.webp)
 
 
 
-#### CSS
+#### Local Terminal
 
  * No errors  were found when passed through the official [W3C Validator check](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbelovedpearl.github.io%2FHistoric_Center_Quiz_PP2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 
- ![CSS Validation](assets/images/siteTest/cssVal.webp)
+ ![Local Terminal](assets/images/siteTest/cssVal.webp)
 
-### JAVASCRIPT
+### Heroku Terminal
  * I have passed the code through [JSHint](https://jshint.com/)
 
 
- ![JSHint Checker](assets/images/siteTest/jshint.webp)
+ ![Heroku Terminal](assets/images/siteTest/jshint.webp)
 
  
  
-
-### Lighthouse Performance
-* Using chrome lighthouse report, the deatails are presented below.
-
-    * Performance = 99
-    * Accessibility = 100 
-    * Best Practices = 92
-    * SEO = 100
-
-![Lighthouse Report](assets/images/siteTest/lighthouse.webp)
-
-
-* I have tested the website across different device like samsung S20, ipads and laptop.
 
 
 ### Functional Testing
