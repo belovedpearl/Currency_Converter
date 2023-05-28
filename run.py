@@ -19,6 +19,14 @@ COLORS = {\
     "black_background": "\u001b[40m",
 }
 
+def colorRep(text):
+    """
+    Coordinate color rendering 
+    """
+    for color in COLORS:
+        text = text.replace("[[" + color + "]]",COLORS[color])
+    return text
+
 def print_art():
     """
     Open the file and print out the art onto the terminal
