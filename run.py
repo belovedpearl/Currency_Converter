@@ -23,6 +23,19 @@ COLORS = {\
     "cyan-background": "\u001b[46m",
     "black_background": "\u001b[40m",
 }
+def list_currencies(currencies):
+    """
+    List the returned currencies
+    """
+    # loop through the returned tuple
+    for name, currency in currencies:
+        name = currency["currencyName"]
+        identity = currency["id"]
+        # Get the symbol
+        symbol = currency.get("currencySymbol", "") # Return value if found and "" if not existing
+        print(f"{identity} - {name} - {symbol}")   
+
+
 def get_currencies():
     """
     Connect the base url and the currency link
