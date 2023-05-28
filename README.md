@@ -236,17 +236,30 @@ This project is a terminal based program, users are prompted for input to move t
 
 ### GitHub Pages
 
+* The project was deployed using heroku.
 
+The following illustrate the steps I took to deploy my website;
+Fork or clone this repository in the following steps:
 
 ### How to Fork
-  
-  By forking a repository, you make a copy of a repository without affecting the original repository. You can fork this repository using the following steps.
 
-  * Login to GitHub and locate the [GitHub Repository](https://github.com/belovedpearl/Historic_Center_Quiz_PP2).
+  * Login to GitHub and locate the [GitHub Repository](https://github.com/belovedpearl/Currency_Converter).
 
   * At the top of the repository just above the **"Settings"** button on the menu, locate the **"Fork"** button.
 
   * Once **clicked**, you should have a copy of the original repository in your own account.
+
+### To deploy
+  * Sign up to create an account with heroku.
+  * Click on create a new Heroku app.
+  * Add Config Var by clicking on reveal config vars 
+  * Set the build packs to Python and NodeJs in exact order.
+  * Link the Heroku app to the repository.
+  * Click on **Deploy**
+  * A few minutes later, after refreshing the page, there will automatically be an update containing the **"live site link"**.
+
+The live link can be found [here](https://belovedpearl.github.io/Historic_Center_Quiz_PP2/).
+
 
 
 ---
