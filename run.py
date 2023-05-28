@@ -4,6 +4,8 @@
 import config # file containing the API key
 import os
 from requests import get
+from regulator import *
+
 os.system("clear")
 
 # URL for the get request
@@ -102,7 +104,8 @@ def get_currencies():
 
 
 def start_app():
-    currencies = get_currencies() 
+    currencies = get_currencies()
+    clear_screen() 
     print("Press 1 to list the available currencies.\n")
     print("Press 2 to convert from one currency to another\n")
     print("Press 3 to get exchange rate of two currencies.\n\n")
