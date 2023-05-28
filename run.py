@@ -23,6 +23,30 @@ COLORS = {\
     "cyan-background": "\u001b[46m",
     "black_background": "\u001b[40m",
 }
+
+
+def exchange_rate(currency1, currency2):
+    """
+    Return conversion rate
+    Checks if a wrong entry was made
+    """
+    # Multiple query for the two currency conversion
+    currency_convert_link = f"api/v7/convert?q={currency1}_{currency2}&compact-ultra&apiKey={key}"
+    url = BASE_URL + currency_convert_link
+    # Send a get request
+    response = get(url)
+
+    data = response.json()
+    # Check for incorrect or unlisted currency
+    if data["results"] == {}:
+        print("Invalid currencies")
+        return
+    # Get the rate value into a list
+    rate = list(data.values())[1][currency1 + "_" + currency2]["val"]
+    print(f"Rate of {currency1} to {currency2}  = {rate}")
+    return rate
+
+
 def convert_currencies(currency1, currency2, amount):
     """
     Convert one currency to another
