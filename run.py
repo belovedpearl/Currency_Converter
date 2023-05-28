@@ -23,6 +23,28 @@ COLORS = {\
     "cyan-background": "\u001b[46m",
     "black_background": "\u001b[40m",
 }
+def convert_currencies(currency1, currency2, amount):
+    """
+    Convert one currency to another
+    Takes a specified amount in the base currency
+    """
+    rate = exchange_rate(currency1, currency2)
+    # Check if returned rate is invalid
+    if rate is None:
+        return
+    # Convert to number
+    try:
+        amount = float(amount)
+    # In case of error
+    except:
+        print("Invalid amount")
+        return
+
+    converted_amount = rate * amount
+    print(f"{amount} {currency1} is equal to {converted_amount} {currency2}")
+    return converted_amount
+
+
 def list_currencies(currencies):
     """
     List the returned currencies
