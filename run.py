@@ -5,6 +5,8 @@ import config # file containing the API key
 import os
 from requests import get
 from regulator import *
+import gspread
+from google.oauth2.service_account import Credentials
 
 os.system("clear")
 
