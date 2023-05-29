@@ -8,7 +8,22 @@ from regulator import *
 import gspread
 from google.oauth2.service_account import Credentials
 
-os.system("clear")
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('currency_converter')
+
+register = SHEET.worksheet('register')
+data = register.get_all_values()
+print(data)
+
+#os.system("clear")
 
 # URL for the get request
 BASE_URL = "https://free.currconv.com/"
@@ -165,5 +180,5 @@ def main():
 
 
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+ #   main()
