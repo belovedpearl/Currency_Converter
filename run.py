@@ -19,6 +19,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('currency_converter')
 
+"""
 register = SHEET.worksheet('register')
 data = register.get_all_values()
 
@@ -29,8 +30,9 @@ for data in register_data:
         all_data.append(val)
 
 print(all_data)
+"""
 
-#os.system("clear")
+os.system("clear")
 
 # URL for the get request
 BASE_URL = "https://free.currconv.com/"
@@ -161,6 +163,24 @@ def colorRep(text):
         text = text.replace("[[" + color + "]]",COLORS[color])
     return text
 
+
+def register_to_use():
+    """
+    Update the register with the new username
+    """
+    username = input("Enter your username: ")
+    print(username)
+    # register = SHEET.worksheet('register')
+    # data = register.get_all_values()
+    # data.append(username)
+    # print(data)
+    worksheet_to_update = SHEET.worksheet("register")
+    print("success")
+    worksheet_to_update.append_row(username)
+     
+    print(f"You are now a registered user...\n") 
+
+
 def print_art():
     """
     Open the file and print out the art onto the terminal
@@ -170,6 +190,27 @@ def print_art():
     title_tag = colorRep(ascii)
     print(title_tag)
 
+def check_status(name):
+    """
+    Checks if the user is a registered user
+    """
+    register = SHEET.worksheet('register')
+    data = register.get_all_values()
+
+    register_data = data[1:]
+    all_data = []
+    for data in register_data:
+        for val in data:
+            all_data.append(val)
+    registered_names = all_data
+    if name in registered_names:
+        print("Welcome to currency converter...\n")
+        print("What will you like to do today?\n")
+        start_app()
+    else:
+        print("You are not a registered user.\nYou need to register to use this program.")
+        register_to_use()
+    
 
 def main():
     """
@@ -177,9 +218,9 @@ def main():
     """
     print_art()
     
-    print("Welcome to currency converter...\n")
-    print("What will you like to do today?\n")
-    start_app()
+    username = input("Enter your username.")
+    check_status(username)
+   
 
 
     #username = checkName()
@@ -187,5 +228,5 @@ def main():
 
 
 
-#if __name__ == "__main__":
- #   main()
+if __name__ == "__main__":
+   main()
