@@ -21,7 +21,14 @@ SHEET = GSPREAD_CLIENT.open('currency_converter')
 
 register = SHEET.worksheet('register')
 data = register.get_all_values()
-print(data)
+
+register_data = data[1:]
+all_data = []
+for data in register_data:
+    for val in data:
+        all_data.append(val)
+
+print(all_data)
 
 #os.system("clear")
 
