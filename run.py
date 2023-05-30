@@ -101,6 +101,11 @@ def list_currencies(currencies):
     """
     List the returned currencies
     """
+    typewriter("Column 1 displays identity of currencies.")
+    typewriter("Column 2 displays common names of currencies.")
+    typewriter("Column 3 displays symbols of the currencies")
+
+
     # loop through the returned tuple
     for name, currency in currencies:
         name = currency["currencyName"]
@@ -168,16 +173,16 @@ def register_to_use():
     """
     Update the register with the new username
     """
-    username = input("Enter your username: ")
+    print("Signup below: ")
+    username = input("Enter your Username: \n")
     print(username)
-    # register = SHEET.worksheet('register')
-    # data = register.get_all_values()
-    # data.append(username)
-    # print(data)
+
     worksheet_to_update = SHEET.worksheet("register")
-    print("success")
-    worksheet_to_update.append_row(username)
-     
+    
+    # Convert the username to a list
+    add_to_list = username.split()
+    # Update the username to the end of the column
+    worksheet_to_update.append_row(add_to_list)
     print(f"You are now a registered user...\n") 
 
 
@@ -210,7 +215,9 @@ def check_status(name):
     else:
         print("You are not a registered user.\nYou need to register to use this program.")
         register_to_use()
-    
+
+ def sign_in():
+       
 
 def main():
     """
@@ -220,10 +227,7 @@ def main():
     
     username = input("Enter your username.")
     check_status(username)
-   
 
-
-    #username = checkName()
         
 
 
