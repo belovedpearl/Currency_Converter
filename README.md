@@ -68,9 +68,9 @@
 
 ---
 
-Currency converter as named is designed to provide real time currency conversion rate to its users.
+MyCurrency as named is designed to provide real time currency conversion rate to its users.
 It allows its users convert the value of one currency to another. It also provides a convenient and efficient way to perform currency conversions for various needs, it can also be used in financial plannings especially when it involves other currencies.
-It also seek to educate its users by providing a list of countries and their currencies. Through it, users are able to build up understanding about different currencies that exists. 
+It also seek to educate its users by providing a list of countries and their currencies. Through it, users are able to build up understanding about different currencies that exists and thier symbols. 
 
 
 ---
@@ -79,14 +79,13 @@ It also seek to educate its users by providing a list of countries and their cur
 
 ---
 
-   * To educaten its users on currencies around the world.
+   * To educate its users on currencies around the world.
    * Provide real time currency exchange rate.
    * Provide access to currency conversion with ease.
    * Register its users.
    * First time users needs to sign up to use.
-   * 
-   
 
+   
 ---
 
 ## Users Goal
@@ -94,8 +93,8 @@ It also seek to educate its users by providing a list of countries and their cur
 ---
 
    * To easily navigate and understand the application.
-   * Be informed about historic centers around.
-   * To be able to access the game from different media.
+   * Be able to view the list and perform desired conversion.
+   * To be able to view the exchange rate.
 
 
 ---
@@ -104,8 +103,8 @@ It also seek to educate its users by providing a list of countries and their cur
 
 ---
 
-The game seeks to impact knowledge and hence its target audience are old and young interested in knowing about the various historic centers around the world. 
-
+People in need of financial rates across different countries.
+People that seek to trade in foreign currencies.
 
 ---
 
@@ -192,7 +191,7 @@ This project is a terminal based program, users are prompted for input to move t
 
 ---
 
-### Languages
+### Language
 
 * PYTHON
 
@@ -221,7 +220,8 @@ This project is a terminal based program, users are prompted for input to move t
 
 ### Fixed Bugs
 
-* .
+* Rows not appendeing in the worksheet
+    *Converting my data to list before appending helped fixed this
 
 
 ### Unfixed Bugs
@@ -268,7 +268,7 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
 ---
   
   *  [Free Currency Converter API](https://free.currencyconverterapi.com/)
-  *  [Balsamiq Wireframes](https://balsamiq.com/)
+  *  [Title Art](https://patorjk.com/)
   *  [Resizing Images](https://www.reduceimages.com/)
   *  [Reducing Images size](https://tinypng.com/)
   *  [Test for Responsiveness](https://ui.dev/amiresponsive)
@@ -353,17 +353,16 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
 *  [W3Schools](https://www.w3schools.com/), [Stack overflow](https://www.slackoverflow.com/) & [Mdn wed docs](https://developer.mozilla.org/en-US/) - Visited several times to learn different syntax used in the code.
 
 
-* Content Sources:
-
-[25 Best Historical Places in the World](https://luxurycolumnist.com/best-historical-places-in-the-world/)
-
+*
 ---
 
 ## Acknowledgement
 
 * I will like to thank **My Husband** for his support and understanding during the project, for all encouragement and even getting me on this programme.
 
-* Much love to my **Children** for understanding and encouraging me through this project buildup
+* Much love to my **Children** for understanding and encouraging me through this project buildup.
+
+* Special thanks to [Adam Boley](https://github.com/AdamBoley/) for his support during the build up of the project.
 
 * A big thank you to my Mentor, **Sandeep Aggarwal**  for the support and through enlightment he provided during the buildup of this project.
 
