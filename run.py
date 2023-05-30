@@ -135,12 +135,16 @@ def get_currencies():
 
 
 def start_app():
+    """
+    Prompts user to make a choice
+    Continues the program in the path chosen
+    """
     currencies = get_currencies()
      
     typewriter("Press 1 to list the available currencies.\n")
     typewriter("Press 2 to convert from one currency to another.\n")
     typewriter("Press 3 to get exchange rate of two currencies.\n\n")
-    
+
     while True:
         answer = input("Choose an option or press q to quit.\n")
 
@@ -190,11 +194,12 @@ def print_art():
     """
     Open the file and print out the art onto the terminal
     """
-    f = open("title_art.txt","r")
-    ascii = "".join(f.readlines())
-    title_tag = colorRep(ascii)
-    print(title_tag)
-
+    with open("title_art.txt") as r:
+        while f := r.readlines():
+            ascii = "".join(f)
+            title_tag = colorRep(ascii)
+            print(title_tag)
+            
 
 def check_status(name):
     """
