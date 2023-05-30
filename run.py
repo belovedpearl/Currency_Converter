@@ -199,7 +199,7 @@ def print_art():
             ascii = "".join(f)
             title_tag = colorRep(ascii)
             print(title_tag)
-            
+
 
 def check_status(name):
     """
@@ -238,7 +238,7 @@ def main():
     Starts the application
     """
     print_art()
-    sign_in()
+    #sign_in()
     
 
 
