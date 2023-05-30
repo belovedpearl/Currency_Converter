@@ -141,12 +141,12 @@ def start_app():
     """
     currencies = get_currencies()
      
-    typewriter("Press 1 to list the available currencies.\n")
-    typewriter("Press 2 to convert from one currency to another.\n")
-    typewriter("Press 3 to get exchange rate of two currencies.\n\n")
+    typewriter(colorRep("Press [[red]]1[[black]] to [[red]]LIST[[black]] the available currencies.\n"))
+    typewriter(colorRep("Press [[red]]2[[black]] to [[red]]CONVERT[[black]] from one currency to another.\n"))
+    typewriter(colorRep("Press [[red]]3[[black]] to get [[red]]EXCHANGE[[black]] rate of two currencies.\n\n"))
 
     while True:
-        answer = input("Choose an option or press q to quit.\n")
+        answer = input(colorRep("Choose an option or press [[red]]q[[black]] to quit.\n"))
 
         if answer == "q":
             break
@@ -216,7 +216,8 @@ def check_status(name):
     registered_names = all_data
 
     if name in registered_names:
-        print("Welcome to currency converter...\n")
+        print("Welcome to MyCurrency...\n")
+        typewriter("The Currency Master.\n")
         print("What will you like to do today?\n")
         start_app()
     else:
@@ -238,7 +239,7 @@ def main():
     Starts the application
     """
     print_art()
-    #sign_in()
+    sign_in()
     
 
 
