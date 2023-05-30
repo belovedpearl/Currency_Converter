@@ -101,9 +101,9 @@ def list_currencies(currencies):
     """
     List the returned currencies
     """
-    typewriter("Column 1 displays identity of currencies.")
-    typewriter("Column 2 displays common names of currencies.")
-    typewriter("Column 3 displays symbols of the currencies")
+    typewriter("Column 1 displays identity of currencies.\n")
+    typewriter("Column 2 displays common names of currencies.\n")
+    typewriter("Column 3 displays symbols of the currencies.\n")
 
 
     # loop through the returned tuple
@@ -140,8 +140,9 @@ def start_app():
     typewriter("Press 1 to list the available currencies.\n")
     typewriter("Press 2 to convert from one currency to another.\n")
     typewriter("Press 3 to get exchange rate of two currencies.\n\n")
+    
     while True:
-        answer = input("Choose an option or press q to quit.")
+        answer = input("Choose an option or press q to quit.\n")
 
         if answer == "q":
             break
@@ -173,10 +174,9 @@ def register_to_use():
     """
     Update the register with the new username
     """
-    print("Signup below: ")
+    print("\nSignup below: ")
     username = input("Enter your Username: \n")
     print(username)
-
     worksheet_to_update = SHEET.worksheet("register")
     
     # Convert the username to a list
@@ -184,7 +184,7 @@ def register_to_use():
     # Update the username to the end of the column
     worksheet_to_update.append_row(add_to_list)
     print(f"You are now a registered user...\n") 
-
+    sign_in()
 
 def print_art():
     """
@@ -194,6 +194,7 @@ def print_art():
     ascii = "".join(f.readlines())
     title_tag = colorRep(ascii)
     print(title_tag)
+
 
 def check_status(name):
     """
@@ -208,28 +209,32 @@ def check_status(name):
         for val in data:
             all_data.append(val)
     registered_names = all_data
+
     if name in registered_names:
         print("Welcome to currency converter...\n")
         print("What will you like to do today?\n")
         start_app()
     else:
-        print("You are not a registered user.\nYou need to register to use this program.")
+        print("You are not a registered user.\n\nYou need to register to use this program.")
         register_to_use()
 
- def sign_in():
-       
+
+def sign_in():
+    """
+    Takes in username
+    calls to check if username is registered
+    """
+    username = input("Enter your username: \n")
+    check_status(username)   
+
 
 def main():
     """
     Starts the application
     """
     print_art()
+    sign_in()
     
-    username = input("Enter your username.")
-    check_status(username)
-
-        
-
 
 
 if __name__ == "__main__":
