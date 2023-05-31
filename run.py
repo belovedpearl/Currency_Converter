@@ -19,38 +19,13 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('currency_converter')
 
-"""
-register = SHEET.worksheet('register')
-data = register.get_all_values()
-
-register_data = data[1:]
-all_data = []
-for data in register_data:
-    for val in data:
-        all_data.append(val)
-
-print(all_data)
-"""
-
-os.system("clear")
 
 # URL for the get request
 BASE_URL = "https://free.currconv.com/"
+
+# Get APIkey contained in the config file
 key = config.API_KEY
 
-
-""" ANSI color codes """
-COLORS = {\
-    "black": "\033[0;30m",
-    "red": "\033[0;31m",
-    "green": "\033[0;32m",
-    "brown": "\033[0;33m",
-    "blue": "\033[0;34m",
-    "purple": "\033[0;35m",
-    "cyan": "\033[0;36m",
-    "cyan-background": "\u001b[46m",
-    "black_background": "\u001b[40m",
-}
 
 
 def exchange_rate(currency1, currency2):
@@ -165,15 +140,6 @@ def start_app():
             print("You have made an invalid choice.")
 
 
-def colorRep(text):
-    """
-    Coordinate color rendering 
-    """
-    for color in COLORS:
-        text = text.replace("[[" + color + "]]",COLORS[color])
-    return text
-
-
 def register_to_use():
     """
     Update the register with the new username
@@ -190,15 +156,6 @@ def register_to_use():
     print(f"You are now a registered user...\n") 
     sign_in()
 
-def print_art():
-    """
-    Open the file and print out the art onto the terminal
-    """
-    with open("title_art.txt") as r:
-        while f := r.readlines():
-            ascii = "".join(f)
-            title_tag = colorRep(ascii)
-            print(title_tag)
 
 
 def check_status(name):
