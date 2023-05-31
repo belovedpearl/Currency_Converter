@@ -127,6 +127,23 @@ Link for my thought on the project is found ![here](assets/images/wireframes)
 ### Existing Features
 
 Features on the application include:
+#### Opening Section:
+This consist of the title and a caption introducung the user to what the program does.
+
+
+#### Username section:
+It takes in the username and opens up the program if the user is registered
+
+#### Registration check:
+Users need to register to use this program.This section checks if the username is present on the worksheet attached.
+
+#### Sign-up Section:
+This section allows new user to register their name to access the program.
+
+#### Choice section:
+Users are prompted to choose their desired path of operation to achieve a desired result.
+
+
 
 
 
@@ -154,9 +171,7 @@ Features on the application include:
 ---
 
 
-* For simplicity and my hope to learn more so that users can improve the game appearance to their desired choice, I have opted to use linear gradient to design the body.
-
-* I have added box shadow to the sections to better present it to users.
+* I have added red color to fonts to make some sections stand out to user.
 
 
 ### Font
@@ -268,9 +283,10 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
 ---
   
   *  [Free Currency Converter API](https://free.currencyconverterapi.com/)
+  *  [Free Currency Converter API documentation](https://www.currencyconverterapi.com/docs)
   *  [Title Art](https://patorjk.com/)
-  *  [Resizing Images](https://www.reduceimages.com/)
-  *  [Reducing Images size](https://tinypng.com/)
+  *  [Google Sheets API](https://console.cloud.google.com/)
+  *  [Google Sheet](https://docs.google.com/spreadsheets/)
   *  [Test for Responsiveness](https://ui.dev/amiresponsive)
   *  [Contrast checker](https://dequeuniversity.com/)
   *  [Coolors.co](https://coolors.co/)
@@ -325,15 +341,12 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
   
 | Action (CLICK) | Expected Behavior   | Actual Behavior |
 | :---: | :---: | :---: |
-| Logo | Load the homepage  | P   |
-| Instruction Button | Links to the instruction section  | P   |
-| Home Button | Returns to the homepage from the instruction page   | P   |
-| Play Game Button | Opens up the username input page  | P   |
-| Start Game Button | Opens up the game page   | P   |
-| High Score Button  | Opens up the highScore page  | P |
-| Home Button| Returns the user back to the main page  | P   |
-| Start Over Button | Restarts the game after 60 seconds timeout or 10 questions answered   | P   |
-| Save Score | Saves the score to the local storage   | P   |
+| Username |  Takes in the username  | If user is registered, opens up the program   |
+|  Press 1 | List the available currncies and symbols  | P   |
+| Press 2 | Opens up the conversion section   | P   |
+| Press 3 | Gets the exchange rate  of specified currencies printed  | P   |
+|Press q | Exist the program   | P   |
+|Sign-up section  | Adds the new user username to the worksheet  | P |
 
 
 ---
@@ -350,10 +363,13 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
 
 * [Clear screen function](https://www.101computing.net/python-typing-text-effect/).
 
+* [Import your own modules](https://youtu.be/GxCXiSkm6no)
+
+* [Add color to art](https://youtu.be/u4QMAloo4i0)
+
 *  [W3Schools](https://www.w3schools.com/), [Stack overflow](https://www.slackoverflow.com/) & [Mdn wed docs](https://developer.mozilla.org/en-US/) - Visited several times to learn different syntax used in the code.
 
 
-*
 ---
 
 ## Acknowledgement
