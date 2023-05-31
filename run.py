@@ -27,6 +27,23 @@ BASE_URL = "https://free.currconv.com/"
 key = config.API_KEY
 
 
+def get_countries(currencies):
+    """
+    Gets the list of countries avialable in the url
+    """
+    # list of countries provided in the API documentation
+    countries_link = f"api/v7/countries?apiKey={key}" #f"api/v7/currencies?apiKey={key}"
+    url = BASE_URL + countries_link
+    # Send a get request to the base url
+    # Access the result key in the json file
+    data_returned = get(url).json()['results']
+    # Convert the returned values to a list
+    data_returned = list(data_returned.items())
+    
+    for data in data_returned:
+        # Access the specific country name
+        print(data[1]["name"])
+    
 
 def exchange_rate(currency1, currency2):
     """
@@ -115,11 +132,12 @@ def start_app():
     Continues the program in the path chosen
     """
     currencies = get_currencies()
-     
+    
     typewriter(colorRep("Press [[red]]1[[black]] to [[red]]LIST[[black]] the available currencies.\n"))
     typewriter(colorRep("Press [[red]]2[[black]] to [[red]]CONVERT[[black]] from one currency to another.\n"))
-    typewriter(colorRep("Press [[red]]3[[black]] to get [[red]]EXCHANGE[[black]] rate of two currencies.\n\n"))
-
+    typewriter(colorRep("Press [[red]]3[[black]] to get [[red]]EXCHANGE[[black]] rate of two currencies.\n"))
+    typewriter(colorRep("Press [[red]]4[[black]] to [[red]]GET[[black]] a list of available countries.\n\n"))
+    
     while True:
         answer = input(colorRep("Choose an option or press [[red]]q[[black]] to quit.\n"))
 
@@ -136,6 +154,8 @@ def start_app():
             currency1 = input("Enter a base currency id.").upper()
             currency2 = input("Enter the next currency id").upper()
             exchange_rate(currency1, currency2)
+        elif answer == "4":
+            get_countries(currencies)
         else:
             print("You have made an invalid choice.")
 
@@ -187,7 +207,7 @@ def sign_in():
     Takes in username
     calls to check if username is registered
     """
-    username = input("Enter your username: \n")
+    username = input("Enter your username: \n") # Retained as user types it in for proper verification of user
     check_status(username)   
 
 
