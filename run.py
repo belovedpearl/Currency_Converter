@@ -76,9 +76,9 @@ def list_currencies(currencies):
     """
     List the returned currencies
     """
-    typewriter("Column 1 displays identity of currencies.\n")
-    typewriter("Column 2 displays common names of currencies.\n")
-    typewriter("Column 3 displays symbols of the currencies.\n")
+    typewriter(colorRep("Column 1 displays [[red]]IDENTITY[[black]] of currencies.\n"))
+    typewriter(colorRep("Column 2 displays [[red]]COMMON NAMES[[black]] of currencies.\n"))
+    typewriter(colorRep("Column 3 displays [[red]]SYMBOLS[[black]] of the currencies.\n"))
 
 
     # loop through the returned tuple
@@ -87,7 +87,7 @@ def list_currencies(currencies):
         identity = currency["id"]
         # Get the symbol
         symbol = currency.get("currencySymbol", "") # Return value if found and "" if not existing
-        print(f"{identity} - {name} - {symbol}")   
+        print(colorRep(f"[[blue]]{identity}[[black]] - {name} - [[red]]{symbol}[[black]]"))   
 
 
 def get_currencies():
@@ -174,7 +174,7 @@ def check_status(name):
 
     if name in registered_names:
         print("Welcome to MyCurrency...\n")
-        typewriter("The Currency Master.\n")
+        typewriter(colorRep("[[blue]]The Currency Master.\n[[black]]"))
         print("What will you like to do today?\n")
         start_app()
     else:
@@ -198,7 +198,6 @@ def main():
     print_art()
     sign_in()
     
-
 
 if __name__ == "__main__":
    main()
