@@ -11,7 +11,7 @@
 
 **Table of Contents:**
 ---
----
+
  * [Project Description](#project-description)
     * [Site Owners Goal](#site-owners-goal)
     * [Users Goal](#users-goal)
@@ -20,12 +20,14 @@
      
 * [Features](#features)
     * [Existing Features](#existing-features)
+        *[Opening Section](#opening-section)
+        *[Username Section](#username-section)
+        *[Registration Section](#registration-section)
+        *[Sign-up Section](#sign-up-section)
+        *[Choice Section](#choice-section)
     
 * [Future features](#future-features)
 * [Design Choices](#design-choices)
-   * [Font](#font)
-   * [Color Schemes](#colour-scheme)
-
 * [Accessibility](#accessibility)
 
 * [Technology, Frameworks and Programs](#technology-frameworks-and-programs)
@@ -99,14 +101,6 @@ It also seek to educate its users by providing a list of countries and their cur
 
 ---
 
-## Target Audience
-
----
-
-People in need of financial rates across different countries.
-People that seek to trade in foreign currencies.
-
----
 
 ## Wireframes
 
@@ -131,23 +125,21 @@ Features on the application include:
 This consist of the title and a caption introducung the user to what the program does.
 
 
-#### Username section:
+#### Username Section:
 It takes in the username and opens up the program if the user is registered
 
-#### Registration check:
+#### Registration Check:
 Users need to register to use this program.This section checks if the username is present on the worksheet attached.
 
 #### Sign-up Section:
 This section allows new user to register their name to access the program.
 
-#### Choice section:
+#### Choice Section:
 Users are prompted to choose their desired path of operation to achieve a desired result.
 
 
+---
 
-
-
- 
 ## Future Features
 
 ---
@@ -319,7 +311,7 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
 
 #### Local Terminal
 
- * No errors  were found when passed through the official [W3C Validator check](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbelovedpearl.github.io%2FHistoric_Center_Quiz_PP2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+ * I have written the program and ran it several times on my terminal and it all work fine as desired.
 
 
  ![Local Terminal](assets/images/siteTest/cssVal.webp)
