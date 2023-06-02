@@ -71,17 +71,18 @@
 ---
 
 MyCurrency as named is designed to provide real time currency conversion rate to its users.
-It allows its users convert the value of one currency to another. It also provides a convenient and efficient way to perform currency conversions for various needs, it can also be used in financial plannings especially when it involves other currencies.
+It is designed to be an handy tool for users to convert the value of one currency to another . It also provides a convenient and efficient way to perform currency conversions for various needs, it can also be used in financial plannings especially when it involves other currencies.
 It also seek to educate its users by providing a list of countries and their currencies. Through it, users are able to build up understanding about different currencies that exists and thier symbols. 
 
-
+ ![View Live Site Here](https://git.heroku.com/mycurrency.git)
+ 
 ---
 
 ## Site Owners Goal
 
 ---
 
-   * To educate its users on currencies around the world.
+   * To educate its users on currencies and countries around the world.
    * Provide real time currency exchange rate.
    * Provide access to currency conversion with ease.
    * Register its users.
@@ -163,19 +164,13 @@ Users are prompted to choose their desired path of operation to achieve a desire
 
 * I have added red color to fonts to make some sections stand out to user.
 
+* Blue color was also added to some statements to improve its appearance.
+
 
 ### Font
 
 Standard terminal font is used to present the project.
 
-
-### Colour Scheme
-
-   
-I have selected a mix of blue shades **(rgb(32,201, 255) 36.7%)**, **(rgb(52, 79, 88) 84.4%)**, **black** and **White** to complement site appearance.
-Using [color contrast checker](https://dequeuniversity.com/) have checked the contrast of both colors use as foreground and background. Contrast result gave the following.
-
-I have maintained a button text color change to white on hovering to alert the user of the mouse presence on each button.
 
 --- 
 
@@ -213,6 +208,8 @@ This project is a terminal based program, users are prompted for input to move t
 * Gitpod
     * This is the IDE used to write the code from where i can push to github.
 
+* Heroku
+    * This was used to deploy the web-application.
 
 ---
 
@@ -223,8 +220,13 @@ This project is a terminal based program, users are prompted for input to move t
 ### Fixed Bugs
 
 * Rows not appendeing in the worksheet
+
     *Converting my data to list before appending helped fixed this
 
+
+* Heroku not recognising file containing my key.
+
+    * 
 
 ### Unfixed Bugs
  * To my current understanding, there is no unfixed bug
@@ -259,7 +261,7 @@ Fork or clone this repository in the following steps:
   * Click on **Deploy**
   * A few minutes later, after refreshing the page, there will automatically be an update containing the **"live site link"**.
 
-The live link can be found [here](https://belovedpearl.github.io/Historic_Center_Quiz_PP2/).
+The live link can be found [here](https://git.heroku.com/mycurrency.git/).
 
 
 
