@@ -24,7 +24,7 @@ SHEET = GSPREAD_CLIENT.open("currency_converter")
 BASE_URL = "https://free.currconv.com/"
 
 # Get APIkey contained in the config file
-key = config.API_KEY
+KEY = config.API_KEY
 
 
 def get_countries(currencies):
@@ -33,7 +33,7 @@ def get_countries(currencies):
     """
     # list of countries provided in the API documentation
     countries_link = (
-        f"api/v7/countries?apiKey={key}"  # f"api/v7/currencies?apiKey={key}"
+        f"api/v7/countries?apiKey={KEY}"
     )
     url = BASE_URL + countries_link
     # Send a get request to the base url
@@ -54,7 +54,7 @@ def exchange_rate(currency1, currency2):
     """
     # Multiple query for the two currency conversion
     currency_convert_link = (
-        f"api/v7/convert?q={currency1}_{currency2}&compact-ultra&apiKey={key}"
+        f"api/v7/convert?q={currency1}_{currency2}&compact-ultra&apiKey={KEY}"
     )
     url = BASE_URL + currency_convert_link
     # Send a get request
@@ -88,7 +88,7 @@ def convert_currencies(currency1, currency2, amount):
         print("Invalid amount")
         return
     converted_amount = rate * amount
-    print(f"{amount} {currency1} is equal to {converted_amount:.2f} {currency2}")
+    print(f"{amount}{currency1} is equal to {converted_amount:.2f}{currency2}")
     return converted_amount
 
 
@@ -124,7 +124,7 @@ def get_currencies():
     list the values found in the returned
     """
     # list of currencies provided in the API documentation
-    currency_link = f"api/v7/currencies?apiKey={key}"
+    currency_link = f"api/v7/currencies?apiKey={KEY}"
     url = BASE_URL + currency_link
     # Send a get request to the base url
     # Access the result key in the json file
@@ -170,17 +170,19 @@ def start_app():
         )
 
         if answer == "q":
+            typewriter("Thank you for using MyCurrency...\n")
+            typewriter(colorRep("[[blue]]SEE YOU NEXT TIME.[[black]]\n"))
             break
         elif answer == "1":
             list_currencies(currencies)
         elif answer == "2":
-            currency1 = input("Enter your base currency id: ").upper()
-            currency2 = input("What currency id are you converting to? ").upper()
-            amount = input(f"Enter an amount in {currency1}: ").upper()
+            currency1 = input("Enter your base currency id: \n").upper()
+            currency2 = input("What currency id are you converting to? \n").upper()
+            amount = input(f"Enter an amount in {currency1}: \n").upper()
             convert_currencies(currency1, currency2, amount)
         elif answer == "3":
-            currency1 = input("Enter a base currency id: ").upper()
-            currency2 = input("Enter the next currency id: ").upper()
+            currency1 = input("Enter a base currency id: \n").upper()
+            currency2 = input("Enter the next currency id: \n").upper()
             exchange_rate(currency1, currency2)
         elif answer == "4":
             get_countries(currencies)
