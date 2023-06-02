@@ -106,10 +106,8 @@ It also seek to educate its users by providing a list of countries and their cur
 
 ---
 
-Lucid Chart was used in planning the project.
-
-Link for my thought on the project is found ![here](assets/images/wireframes)
-
+Lucid Chart was used in planning the project. Below is a representation of my thought on the project. 
+![Project Plan](assets/images/project_draw.webp)
 
 
 ---
@@ -168,10 +166,7 @@ Users are prompted to choose their desired path of operation to achieve a desire
 
 ### Font
 
-* Andika
-    * I believe it is a clean font for this game and its bold, its source is google font.
-* Sans-serif
-    * This is set as a fall-back font for device that might not load google fonts and its easily available.
+Standard terminal font is used to present the project.
 
 
 ### Colour Scheme
@@ -279,9 +274,9 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
   *  [Title Art](https://patorjk.com/)
   *  [Google Sheets API](https://console.cloud.google.com/)
   *  [Google Sheet](https://docs.google.com/spreadsheets/)
-  *  [Test for Responsiveness](https://ui.dev/amiresponsive)
-  *  [Contrast checker](https://dequeuniversity.com/)
-  *  [Coolors.co](https://coolors.co/)
+  *  [Black Vercel](https://black.vercel.app)
+  *  [Python Checker](https://pythonchecker.com/)
+  
   *  [Font Awesome](https://fontawesome.com/)
 
   *  [Fonts](https://fonts.google.com/) 
@@ -322,7 +317,9 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
 
  ![Heroku Terminal](assets/images/siteTest/jshint.webp)
 
- 
+ I have also tested the code using python checker.
+
+ ![Python Checker](assets/images/python-checker.webp)
  
 
 
@@ -347,6 +344,8 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
 
 * [Importing your own module properly](https://youtu.be/GxCXiSk6no)
 
+* [Python style guide](https://google.github.io/styleguide/pyguide.html)
+
 * [ReadMe Table Inspiration](https://github.com/belovedpearl/Green_Space-PP1/blob/main/README.md)
 
 * [Code institute's template](https://github.com/Code-Institute-Org/gitpod-full-template)
@@ -359,7 +358,7 @@ The live link can be found [here](https://belovedpearl.github.io/Historic_Center
 
 * [Add color to art](https://youtu.be/u4QMAloo4i0)
 
-*  [W3Schools](https://www.w3schools.com/), [Stack overflow](https://www.slackoverflow.com/) & [Mdn wed docs](https://developer.mozilla.org/en-US/) - Visited several times to learn different syntax used in the code.
+* [W3Schools](https://www.w3schools.com/), [Stack overflow](https://www.slackoverflow.com/) & [Mdn wed docs](https://developer.mozilla.org/en-US/) - Visited several times to learn different syntax used in the code.
 
 
 ---
