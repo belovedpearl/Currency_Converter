@@ -174,17 +174,21 @@ def start_app():
             typewriter(colorRep("[[blue]]SEE YOU NEXT TIME.[[black]]\n"))
             break
         elif answer == "1":
+            clear_screen()
             list_currencies(currencies)
         elif answer == "2":
+            clear_screen()
             currency1 = input("Enter your base currency id: \n").upper()
             currency2 = input("What currency id are you converting to? \n").upper()
             amount = input(f"Enter an amount in {currency1}: \n").upper()
             convert_currencies(currency1, currency2, amount)
         elif answer == "3":
+            clear_screen()
             currency1 = input("Enter a base currency id: \n").upper()
             currency2 = input("Enter the next currency id: \n").upper()
             exchange_rate(currency1, currency2)
         elif answer == "4":
+            clear_screen()
             get_countries(currencies)
         else:
             print("You have made an invalid choice.")
