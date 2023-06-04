@@ -9,10 +9,9 @@ import gspread
 from google.oauth2.service_account import Credentials
 import json
 
-with open("config.json","r") as details:
-    file = details.read()
-    content = json.loads(file)
-
+# with open("config.json","r") as details:
+#     file = details.read()
+#     content = json.loads(file)
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -20,7 +19,8 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive",
 ]
 
-CREDS = Credentials.from_service_account_file("creds.json")
+CREDS = Credentials.from_service_account_info(json.loads(os.environ["CREDS"]))
+# CREDS = Credentials.from_service_account_file("creds.json")
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("currency_converter")
@@ -31,7 +31,9 @@ BASE_URL = "https://free.currconv.com/"
 
 # Get APIkey contained in the config file
 #KEY = config.API_KEY
-KEY = content['API_KEY']
+# KEY = content['API_KEY']
+KEY = os.environ["API_KEY"]
+
 
 
 def get_countries(currencies):
@@ -231,6 +233,16 @@ def check_status(name):
         for val in data:
             all_data.append(val)
     registered_names = all_data
+
+    # if name not in registered_names:
+    #     print("Registeing new user")
+    #     register_user()
+
+    # print("Welcome to MyCurrency...\n")
+    # typewriter(colorRep("[[blue]]The Currency Master.\n[[black]]"))
+    # print("What will you like to do today?\n")
+    # start_app()
+
 
     if name in registered_names:
         print("Welcome to MyCurrency...\n")
