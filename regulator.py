@@ -10,7 +10,7 @@ COLORS = {\
     "red": "\033[0;31m",
     "brown": "\033[0;33m",
     "blue": "\033[0;34m",
-    "cyan": "\033[0;36m",
+    "white": "\u001b[37m",
     "black_background": "\u001b[40m",
 }
 
@@ -23,7 +23,7 @@ def typewriter(message):
         sys.stdout.write(char)
         sys.stdout.flush()
         if char != "\n":
-            time.sleep(0.1)
+            time.sleep(0.075)
         else:
             time.sleep(1)
 

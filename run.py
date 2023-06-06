@@ -250,9 +250,9 @@ def check_status(name):
         print("What will you like to do today?\n")
         start_app()
     else:
-        print(
-            "You are not a registered user.\n\nYou need to register to use this program."
-        )
+        print(colorRep((
+            "[[white]]You are not a registered user.\n\nYou need to register to use this program.[[black]]"
+        )))
         register_to_use()
 
 
@@ -261,9 +261,9 @@ def sign_in():
     Takes in username
     calls to check if username is registered
     """
-    username = input(
-        "Enter your username: \n"
-    )  # Retained as user types it in for proper verification of user
+    username = input(colorRep(
+        "[[white]]Enter your username: \n[[black]]"
+    ))  # Retained as user types it in for proper verification of user
     check_status(username)
 
 
