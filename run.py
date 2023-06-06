@@ -9,9 +9,6 @@ import gspread
 from google.oauth2.service_account import Credentials
 import json
 
-# with open("config.json","r") as details:
-#     file = details.read()
-#     content = json.loads(file)
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -32,7 +29,6 @@ BASE_URL = "https://free.currconv.com/"
 KEY = os.environ["API_KEY"]
 
 
-
 def get_countries(currencies):
     """
     Gets the list of countries avialable in the url
@@ -42,7 +38,6 @@ def get_countries(currencies):
         f"api/v7/countries?apiKey={KEY}"
     )
     url = BASE_URL + countries_link
-    # Send a get request to the base url
     # Access the result key in the json file
     data_returned = get(url).json()["results"]
     # Convert the returned values to a list
@@ -53,26 +48,23 @@ def get_countries(currencies):
         print(data[1]["name"])
 
 
-def exchange_rate():
+def exchange_rate(currency1, currency2):
     """
     Return conversion rate
     Checks if a wrong entry was made
     """
-    currency1 = input("Enter a base currency id: \n").upper()
-    currency2 = input("Enter the next currency id: \n").upper()
-
     # Multiple query for the two currency conversion
     currency_convert_link = (
         f"api/v7/convert?q={currency1}_{currency2}&compact-ultra&apiKey={KEY}"
     )
     url = BASE_URL + currency_convert_link
-    # Send a get request
+    
     response = get(url)
 
     data = response.json()
     # Check for incorrect or unlisted currency
     if data["results"] == {}:
-        print("Invalid currencies")
+        print(colorRep("[[red]]Invalid currencies[[white]]"))
         return
     # Get the rate value into a list
     rate = list(data.values())[1][currency1 + "_" + currency2]["val"]
@@ -93,12 +85,12 @@ def convert_currencies():
     # Check if returned rate is invalid
     if rate is None:
         return
-    # Convert to number
+    # Convert input value to number
     try:
         amount = float(amount)
     # In case of error
     except:
-        print("Invalid amount")
+        print(colorRep("[[red]]You have entered an invalid amount[[white]]"))
         return
     converted_amount = rate * amount
     print(f"{amount}{currency1} is equal to {converted_amount:.2f}{currency2}")
@@ -199,12 +191,14 @@ def start_app():
             convert_currencies()
         elif answer == "3":
             clear_screen()
-            exchange_rate()
+            currency1 = input("Enter a base currency id: \n").upper()
+            currency2 = input("Enter the next currency id: \n").upper()
+            exchange_rate(currency1, currency2)
         elif answer == "4":
             clear_screen()
             get_countries(currencies)
         else:
-            print("You have made an invalid choice.")
+            print(colorRep("[[red]]You have made an invalid choice.[[white]]"))
 
 
 def register_user(name):
@@ -217,7 +211,7 @@ def register_user(name):
     add_to_list = name.split()
     # Update the username to the end of the column
     worksheet_to_update.append_row(add_to_list)
-    typewriter("in Progress...\n")
+    typewriter("...\n")
     typewriter("...\n")
     print(f"You are now a registered user.\n")
     start_app()
@@ -238,7 +232,7 @@ def check_status(name):
     registered_names = all_data
 
     if name not in registered_names:
-        print("Registering new user")
+        print("Registering new user...")
         register_user(name)
 
     if name in registered_names:
