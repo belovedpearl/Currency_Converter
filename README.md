@@ -1,10 +1,12 @@
-# Currency Converter - *Real time currency conversion*
+# MyCash - *Real time currency conversion*
 
 [View code here](https://github.com/belovedpearl/Currency_Converter)
 
 ![Responsiveness](assets/images/siteRepresentation/screen_responsive.webp)
 
-[View site responsiveness here](https://ui.dev/amiresponsive?url=https://belovedpearl.github.io/Historic_Center_Quiz_PP2/)
+## View Live Project
+
+[Link to Deployed Project](https://mycurrency.herokuapp.com/)
 
 
 ---
@@ -15,6 +17,7 @@
  * [Project Description](#project-description)
     * [Site Owners Goal](#site-owners-goal)
     * [Users Goal](#users-goal)
+    * [Target Audience](#target-audience)
    
 * [WireFrames](#wireframes)
      
@@ -70,11 +73,12 @@
 
 ---
 
-MyCurrency as named is designed to provide real time currency conversion rate to its users.
+* MyCash as named is  designed to provide real time currency conversion rate to its users.
 It is designed to be an handy tool for users to convert the value of one currency to another . It also provides a convenient and efficient way to perform currency conversions for various needs, it can also be used in financial plannings especially when it involves other currencies.
-It also seek to educate its users by providing a list of countries and their currencies. Through it, users are able to build up understanding about different currencies that exists and thier symbols. 
 
- ![View Live Site Here](https://git.heroku.com/mycurrency.git)
+* It also seek to educate its users by providing a list of countries and their currencies. Through it, users are able to buildup understanding about different currencies that exists and thier symbols. 
+
+ ![View Deployed Site Here](https://mycurrency.herokuapp.com/)
  
 ---
 
@@ -86,7 +90,8 @@ It also seek to educate its users by providing a list of countries and their cur
    * Provide real time currency exchange rate.
    * Provide access to currency conversion with ease.
    * Register its users.
-   * First time users needs to sign up to use.
+   * Automatically identifies and register new users.
+   * Provide users clear instructions on how to navigate the program.
 
    
 ---
@@ -96,18 +101,29 @@ It also seek to educate its users by providing a list of countries and their cur
 ---
 
    * To easily navigate and understand the application.
-   * Be able to view the list and perform desired conversion.
+   * To be able to choose what to do with the program.
    * To be able to view the exchange rate.
-
+   * To be informed if wrong units is provided.
 
 ---
 
+## Target Audeience
+
+---
+
+The program seeks to provide financial service to its users updating them about exchange rate and values of currencies around the world.
+
+It can be used by business that trade in foreign currencies.
+
+
+---
 
 ## Wireframes
 
 ---
 
 Lucid Chart was used in planning the project. Below is a representation of my thought on the project. 
+
 ![Project Plan](assets/images/project_draw.webp)
 
 
@@ -120,6 +136,7 @@ Lucid Chart was used in planning the project. Below is a representation of my th
 ### Existing Features
 
 Features on the application include:
+
 #### Opening Section:
 This consist of the title and a caption introducung the user to what the program does.
 
@@ -128,10 +145,8 @@ This consist of the title and a caption introducung the user to what the program
 It takes in the username and opens up the program if the user is registered
 
 #### Registration Check:
-Users need to register to use this program.This section checks if the username is present on the worksheet attached.
+Users need to register to use this program.This section checks if the username is present on the worksheet attached.If the user is a new user, it automatically registers the user to use the program.
 
-#### Sign-up Section:
-This section allows new user to register their name to access the program.
 
 #### Choice Section:
 Users are prompted to choose their desired path of operation to achieve a desired result.
@@ -143,18 +158,13 @@ Users are prompted to choose their desired path of operation to achieve a desire
 
 ---
 
- * I will add audio to improve user experience of the game.
+ * Add more display feature to improve user experience.
 
- * Add an autosave feature.
+ * .
 
- * Features that allow users to choose some custom settings to personalize the game.
+ 
 
- * Randomize the position of each option.
-
- * Add a reward section where users can choose a gift based on the scores they get.
-
- * Connect with social media account of users to provide a means to share the game scores online.
-
+ 
 ---
 
 ## Design Choices
@@ -162,10 +172,14 @@ Users are prompted to choose their desired path of operation to achieve a desire
 ---
 
 
-* I have added red color to fonts to make some sections stand out to user.
+* I have added red color to the header fonts to make some sections stand out to user.
+
+* Red color was used to highlight a notice of wrong input from user.
 
 * Blue color was also added to some statements to improve its appearance.
 
+
+---
 
 ### Font
 
@@ -221,12 +235,15 @@ This project is a terminal based program, users are prompted for input to move t
 
 * Rows not appendeing in the worksheet
 
-    *Converting my data to list before appending helped fixed this
+    * Converting my data to list before appending helped fixed this
 
 
 * Heroku not recognising file containing my key.
 
-    * 
+    * Changed the path to access the key.
+
+* After deployment, Terminal print appeared in black bluring view.
+    * Changed the display color after the art to white.
 
 ### Unfixed Bugs
  * To my current understanding, there is no unfixed bug
@@ -278,16 +295,6 @@ The live link can be found [here](https://git.heroku.com/mycurrency.git/).
   *  [Google Sheet](https://docs.google.com/spreadsheets/)
   *  [Black Vercel](https://black.vercel.app)
   *  [Python Checker](https://pythonchecker.com/)
-  
-  *  [Font Awesome](https://fontawesome.com/)
-
-  *  [Fonts](https://fonts.google.com/) 
-
-  *  [CSS Transition](https:youtu.be/EVze4Cq-dZ8)
-
-  *  [Prettier](https://prettier.io/playground/)
-
-  * [Favicon Generator](https://favicon.io/favicon-generator/)
 
 
 ---

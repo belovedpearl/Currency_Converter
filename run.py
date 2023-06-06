@@ -148,7 +148,7 @@ def start_app():
     Continues the program in the path chosen
     """
     currencies = get_currencies()
-
+    
     print("Welcome to MyCash...\n")
     typewriter(colorRep("[[blue]]The Currency Master.\n[[white]]"))
     print("What will you like to do today?\n")
