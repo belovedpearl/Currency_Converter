@@ -53,11 +53,14 @@ def get_countries(currencies):
         print(data[1]["name"])
 
 
-def exchange_rate(currency1, currency2):
+def exchange_rate():
     """
     Return conversion rate
     Checks if a wrong entry was made
     """
+    currency1 = input("Enter a base currency id: \n").upper()
+    currency2 = input("Enter the next currency id: \n").upper()
+
     # Multiple query for the two currency conversion
     currency_convert_link = (
         f"api/v7/convert?q={currency1}_{currency2}&compact-ultra&apiKey={KEY}"
@@ -77,11 +80,15 @@ def exchange_rate(currency1, currency2):
     return rate
 
 
-def convert_currencies(currency1, currency2, amount):
+def convert_currencies():
     """
     Convert one currency to another
     Takes a specified amount in the base currency
     """
+    currency1 = input("Enter your base currency id: \n").upper()
+    currency2 = input("What currency id are you converting to? \n").upper()
+    amount = input(f"Enter an amount in {currency1}: \n").upper()
+
     rate = exchange_rate(currency1, currency2)
     # Check if returned rate is invalid
     if rate is None:
@@ -132,7 +139,7 @@ def get_currencies():
     # list of currencies provided in the API documentation
     currency_link = f"api/v7/currencies?apiKey={KEY}"
     url = BASE_URL + currency_link
-    # Send a get request to the base url
+
     # Access the result key in the json file
     data = get(url).json()["results"]
     # Convert the returned values to a list
@@ -189,15 +196,10 @@ def start_app():
             list_currencies(currencies)
         elif answer == "2":
             clear_screen()
-            currency1 = input("Enter your base currency id: \n").upper()
-            currency2 = input("What currency id are you converting to? \n").upper()
-            amount = input(f"Enter an amount in {currency1}: \n").upper()
-            convert_currencies(currency1, currency2, amount)
+            convert_currencies()
         elif answer == "3":
             clear_screen()
-            currency1 = input("Enter a base currency id: \n").upper()
-            currency2 = input("Enter the next currency id: \n").upper()
-            exchange_rate(currency1, currency2)
+            exchange_rate()
         elif answer == "4":
             clear_screen()
             get_countries(currencies)
