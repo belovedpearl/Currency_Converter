@@ -152,6 +152,10 @@ def start_app():
     """
     currencies = get_currencies()
 
+    print("Welcome to MyCurrency...\n")
+    typewriter(colorRep("[[blue]]The Currency Master.\n[[black]]"))
+    print("What will you like to do today?\n")
+
     typewriter(
         colorRep(
             "Press [[red]]1[[black]] to [[red]]LIST[[black]] the available currencies.\n"
@@ -203,21 +207,22 @@ def start_app():
             print("You have made an invalid choice.")
 
 
-def register_to_use():
+def register_user(name):
     """
     Update the register with the new username
     """
-    print("\nSignup below: ")
-    username = input("Enter your Username: \n")
-    print(username)
+    # print("\nSignup below: ")
+    # username = input("Enter your Username: \n")
+    # print(username)
     worksheet_to_update = SHEET.worksheet("register")
 
     # Convert the username to a list
-    add_to_list = username.split()
+    add_to_list = name.split()
     # Update the username to the end of the column
     worksheet_to_update.append_row(add_to_list)
-    print(f"You are now a registered user...\n")
-    sign_in()
+    typewriter("in Progress...\n")
+    print(f"You are now a registered user.\n")
+    start_app()
 
 
 def check_status(name):
@@ -230,31 +235,17 @@ def check_status(name):
     register_data = data[1:]
     all_data = []
     for data in register_data:
-        for val in data:
-            all_data.append(val)
+        for value in data:
+            all_data.append(value)
     registered_names = all_data
 
-    # if name not in registered_names:
-    #     print("Registeing new user")
-    #     register_user()
-
-    # print("Welcome to MyCurrency...\n")
-    # typewriter(colorRep("[[blue]]The Currency Master.\n[[black]]"))
-    # print("What will you like to do today?\n")
-    # start_app()
-
+    if name not in registered_names:
+        print("Registering new user")
+        register_user(name)
 
     if name in registered_names:
-        print("Welcome to MyCurrency...\n")
-        typewriter(colorRep("[[blue]]The Currency Master.\n[[black]]"))
-        print("What will you like to do today?\n")
         start_app()
-    else:
-        print(colorRep((
-            "[[white]]You are not a registered user.\n\nYou need to register to use this program.[[black]]"
-        )))
-        register_to_use()
-
+    
 
 def sign_in():
     """
