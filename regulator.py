@@ -8,10 +8,12 @@ os.system("clear")
 COLORS = {\
     "black": "\033[0;30m",
     "red": "\033[0;31m",
-    "brown": "\033[0;33m",
+    "green": "\033[32m",
     "blue": "\033[0;34m",
     "white": "\u001b[37m",
     "black_background": "\u001b[40m",
+    "red_background": "\033[41m",
+    "stop_color" : "\x1b[0m",
 }
 
 

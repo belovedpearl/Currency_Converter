@@ -64,7 +64,7 @@ def exchange_rate(currency1, currency2):
     data = response.json()
     # Check for incorrect or unlisted currency
     if data["results"] == {}:
-        print(colorRep("[[red]]Invalid currencies[[white]]"))
+        print(colorRep("[[red_background]]Invalid currencies[[stop_color]]"))
         return
     # Get the rate value into a list
     rate = list(data.values())[1][currency1 + "_" + currency2]["val"]
@@ -90,7 +90,7 @@ def convert_currencies():
         amount = float(amount)
     # In case of error
     except:
-        print(colorRep("[[red]]You have entered an invalid amount[[white]]"))
+        print(colorRep("[[red_background]]You have entered an invalid amount[[stop_color]]"))
         return
     converted_amount = rate * amount
     print(f"{amount}{currency1} is equal to {converted_amount:.2f}{currency2}")
@@ -101,6 +101,8 @@ def list_currencies(currencies):
     """
     List the returned currencies
     """
+    typewriter(colorRep("[[green]]Getting the list of available currencies...\n[[white]]"))
+    print()
     typewriter(colorRep("Column 1 displays [[red]]IDENTITY[[white]] of currencies.\n"))
     typewriter(
         colorRep("Column 2 displays [[red]]NAMES[[white]] of currencies.\n")
@@ -213,7 +215,7 @@ def register_user(name):
     worksheet_to_update.append_row(add_to_list)
     typewriter("...\n")
     typewriter("...\n")
-    print(f"You are now a registered user.\n")
+    typewriter(colorRep(f"[[green]]You are now a registered user.\n[[white]]"))
     start_app()
 
 
