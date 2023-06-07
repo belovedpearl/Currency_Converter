@@ -2,7 +2,7 @@
 
 [View code here](https://github.com/belovedpearl/Currency_Converter)
 
-![Responsiveness](assets/images/siteRepresentation/screen_responsive.webp)
+![Project Presentation](assets/images/opening-section.webp)
 
 ## View Live Project
 
@@ -23,18 +23,17 @@
      
 * [Features](#features)
     * [Existing Features](#existing-features)
-        *[Opening Section](#opening-section)
-        *[Username Section](#username-section)
-        *[Registration Section](#registration-section)
-        *[Sign-up Section](#sign-up-section)
-        *[Choice Section](#choice-section)
+        * [Opening Section](#opening-section)
+        * [Username Section](#username-section)
+        * [Registration Section](#registration-section)
+        * [Choice Section](#choice-section)
     
 * [Future features](#future-features)
 * [Design Choices](#design-choices)
 * [Accessibility](#accessibility)
 
 * [Technology, Frameworks and Programs](#technology-frameworks-and-programs)
-     * [languages](#languages)
+     * [Language](#language)
      * [Frameworks and Programs](#frameworks-and-programs)
 
 * [Bugs](#bugs)
@@ -78,7 +77,7 @@ It is designed to be an handy tool for users to convert the value of one currenc
 
 * It also seek to educate its users by providing a list of countries and their currencies. Through it, users are able to buildup understanding about different currencies that exists and thier symbols. 
 
- ![View Deployed Site Here](https://mycurrency.herokuapp.com/)
+[View Deployed Site Here](https://mycurrency.herokuapp.com/)
  
 ---
 
@@ -86,13 +85,12 @@ It is designed to be an handy tool for users to convert the value of one currenc
 
 ---
 
-   * To educate its users on currencies and countries around the world.
    * Provide real time currency exchange rate.
    * Provide access to currency conversion with ease.
    * Register its users.
    * Automatically identifies and register new users.
    * Provide users clear instructions on how to navigate the program.
-
+   * To educate its users on currencies and countries around the world.
    
 ---
 
@@ -107,7 +105,7 @@ It is designed to be an handy tool for users to convert the value of one currenc
 
 ---
 
-## Target Audeience
+## Target Audience
 
 ---
 
@@ -140,17 +138,23 @@ Features on the application include:
 #### Opening Section:
 This consist of the title and a caption introducung the user to what the program does.
 
+![Opening Section](assets/images/opening-section.webp)
 
 #### Username Section:
-It takes in the username and opens up the program if the user is registered
+It takes in the username and opens up the program if the user is registered. This is done with the aid of an attached spreadsheet found [here](https://docs.google.com/spreadsheets/d/1kxl57ezoU2vcIYNEzAwI6kqMVXdASYTNhHftn92GK0Y/edit#gid=0)
 
-#### Registration Check:
-Users need to register to use this program.This section checks if the username is present on the worksheet attached.If the user is a new user, it automatically registers the user to use the program.
+![Username](assets/images/username.webp)
 
+#### Registration Section:
+The program is designed to automatically detect new user. It checks if the username is present on the worksheet attached, if username is not found, it automatically registers the user to use the program.
+
+
+![Registration](assets/images/newuser.webp)
 
 #### Choice Section:
 Users are prompted to choose their desired path of operation to achieve a desired result.
 
+![Choice](assets/images/choice.webp)
 
 ---
 
@@ -160,9 +164,8 @@ Users are prompted to choose their desired path of operation to achieve a desire
 
  * Add more display feature to improve user experience.
 
- * .
+ * Add terminal background to improve user experience.
 
- 
 
  
 ---
@@ -193,8 +196,6 @@ Standard terminal font is used to present the project.
 ---
 
 This project is a terminal based program, users are prompted for input to move through the application.
-
-
 
 ---
 
@@ -233,10 +234,9 @@ This project is a terminal based program, users are prompted for input to move t
 
 ### Fixed Bugs
 
-* Rows not appendeing in the worksheet
+* Rows not appending in the worksheet
 
     * Converting my data to list before appending helped fixed this
-
 
 * Heroku not recognising file containing my key.
 
@@ -315,18 +315,18 @@ The live link can be found [here](https://git.heroku.com/mycurrency.git/).
 
 #### Local Terminal
 
- * I have written the program and ran it several times on my terminal and it all work fine as desired.
+ * I have written the program and ran it several times on my terminal and it all work fine as expected.
 
 
  ![Local Terminal](assets/images/siteTest/cssVal.webp)
 
 ### Heroku Terminal
- * I have passed the code through [JSHint](https://jshint.com/)
+ * 
 
 
  ![Heroku Terminal](assets/images/siteTest/jshint.webp)
 
- I have also tested the code using python checker.
+ I have also tested the code using **Python Checker**.
 
  ![Python Checker](assets/images/python-checker.webp)
  
@@ -386,10 +386,3 @@ The live link can be found [here](https://git.heroku.com/mycurrency.git/).
 
 * Thank you to everyone at **Code Institute** for helping us learn.
 
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
