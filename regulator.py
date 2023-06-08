@@ -13,7 +13,7 @@ COLORS = {\
     "white": "\u001b[37m",
     "black_background": "\u001b[40m",
     "red_background": "\033[41m",
-    "cyan_background": "\u001b[46;1m",
+    "blue_background": "\u001b[44;1m",
     "stop_color" : "\x1b[0m",
 }
 

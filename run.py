@@ -151,7 +151,7 @@ def start_app():
     currencies = get_currencies()
     
     print("Welcome to MyCash...\n")
-    typewriter(colorRep("[[cyan_background]]The Currency Master.[[stop_color]][[white]]"))
+    typewriter(colorRep("[[blue_background]]The Currency Master.[[stop_color]][[white]]"))
     print()
     print("What will you like to do today?\n")
 
