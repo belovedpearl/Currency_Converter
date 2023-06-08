@@ -75,6 +75,8 @@
 * MyCash as named is  designed to provide real time currency conversion rate to its users.
 It is designed to be an handy tool for users to convert the value of one currency to another . It also provides a convenient and efficient way to perform currency conversions for various needs, it can also be used in financial plannings especially when it involves other currencies.
 
+* It can serve as a tool which help business owners easily understand the rate of different currencies and hence make informed decision. The API used is updated every thirty minutes hence it reflect the true rate of different currencies.
+
 * It also seek to educate its users by providing a list of countries and their currencies. Through it, users are able to buildup understanding about different currencies that exists and thier symbols. 
 
 [View Deployed Site Here](https://mycurrency.herokuapp.com/)
@@ -161,6 +163,9 @@ Users are prompted to choose their desired path of operation to achieve a desire
 ## Future Features
 
 ---
+ * Add visuals and graphs to show a reflection of performance of different currency overtime this is to properly aid business analyse currency flunctuations.
+
+ * Add a finanvial forecast feature to futher aid business decisions.
 
  * Add more display feature to improve user experience.
 
