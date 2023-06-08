@@ -28,7 +28,6 @@ BASE_URL = "https://free.currconv.com/"
 # Get API key saved in the var environment
 KEY = os.environ["API_KEY"]
 
-
 def get_countries(currencies):
     """
     Gets the list of countries avialable in the url
@@ -152,7 +151,8 @@ def start_app():
     currencies = get_currencies()
     
     print("Welcome to MyCash...\n")
-    typewriter(colorRep("[[blue]]The Currency Master.\n[[white]]"))
+    typewriter(colorRep("[[cyan_background]]The Currency Master.[[stop_color]][[white]]"))
+    print()
     print("What will you like to do today?\n")
 
     typewriter(

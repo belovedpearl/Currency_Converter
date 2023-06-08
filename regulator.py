@@ -9,10 +9,11 @@ COLORS = {\
     "black": "\033[0;30m",
     "red": "\033[0;31m",
     "green": "\033[32m",
-    "blue": "\033[0;34m",
+    "blue": "\u001b[34;1m",
     "white": "\u001b[37m",
     "black_background": "\u001b[40m",
     "red_background": "\033[41m",
+    "cyan_background": "\u001b[46;1m",
     "stop_color" : "\x1b[0m",
 }
 
