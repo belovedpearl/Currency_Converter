@@ -31,35 +31,47 @@ def get_history():
     Prints the performance data of selected currencies
     """
     clear_screen()
-    typewriter(colorRep("[[green]]YOU CAN ONLY GET MAXIMUM 8 DAYS HISTORY OF YOUR SELECTED CURRENCIES[[stop_color]]\n"))
+    typewriter(
+        colorRep(
+            "[[green]]YOU CAN ONLY GET MAXIMUM 8 DAYS HISTORY OF YOUR SELECTED CURRENCIES[[stop_color]]\n"
+        )
+    )
     currency1 = input("What is your base currency?\n").upper()
     currency2 = input("What currency are you checking with?\n").upper()
     number_of_days = int(input("Enter the number of days to view \n"))
     end_date = datetime.datetime.now()
     end_date1 = end_date.date()
-   
+
     start_date = end_date - datetime.timedelta(days=1 * number_of_days)
     start_date1 = start_date.date()
-    
+
     data_link = f"api/v7/convert?q={currency1}_{currency2}&compact-ultra&date={start_date1}&endDate={end_date1}&apiKey={KEY}"
     url = CURRENCY_CONVERTER_URL + data_link
     # Access the result key in the json file
     data_returned = get(url).json()
     try:
-        stated_values = data_returned["results"][f"{currency1}_{currency2}"]["val"]
+        stated_values = data_returned["results"][f"{currency1}_{currency2}"][
+            "val"
+        ]
         print("Your currency performance is illustrated below: ")
         print(f"Date\t \tValue of {currency1} to {currency2}")
         for key, value in stated_values.items():
-            print(str(key) +"\t"+ str(value))
+            print(str(key) + "\t" + str(value))
     except:
-        print(colorRep("[[red_background]]You have entered an incorrect currency identity, check out the list of currencies for help[[stop_color]]"))
+        print(
+            colorRep(
+                "[[red_background]]You have entered an incorrect currency identity, check out the list of currencies for help[[stop_color]]"
+            )
+        )
 
 
 def get_countries(currencies):
     """
     Gets the list of countries avialable in the url
     """
-    typewriter(colorRep("[[green]]Getting the list of countries...[[stop_color]]\n\n"))
+    typewriter(
+        colorRep("[[green]]Getting the list of countries...[[stop_color]]\n\n")
+    )
     # list of countries provided in the API documentation
     countries_link = f"api/v7/countries?apiKey={KEY}"
     url = CURRENCY_CONVERTER_URL + countries_link
@@ -67,7 +79,7 @@ def get_countries(currencies):
     data_returned = get(url).json()["results"]
     # Convert the returned values to a list
     data_returned = list(data_returned.items())
-    
+
     for data in data_returned:
         # Access the specific country name
         print(data[1]["name"])
@@ -165,7 +177,7 @@ def list_currencies(currencies):
 
 def get_currencies():
     """
-    Returns the currencies in 
+    Returns the currencies in
     identity, common name and symbol colums
     """
     # list of currencies provided in the API documentation
@@ -303,4 +315,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
