@@ -1,13 +1,10 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 import os
 from requests import get
 from regulator import *
 import gspread
 from google.oauth2.service_account import Credentials
 import json
+import datetime
 
 
 SCOPE = [
@@ -28,14 +25,42 @@ BASE_URL = "https://free.currconv.com/"
 # Get API key saved in the var environment
 KEY = os.environ["API_KEY"]
 
+
+def get_history():
+    """
+    Prints the performance data of selected currencies
+    """
+    clear_screen()
+    typewriter(colorRep("[[green]]YOU CAN ONLY GET MAXIMUM 8 DAYS HISTORY OF YOUR SELECTED CURRENCIES[[stop_color]]\n"))
+    currency1 = input("What is your base currency?\n").upper()
+    currency2 = input("What currency are you checking with?\n").upper()
+    number_of_days = int(input("Enter the number of days to view \n"))
+    end_date = datetime.datetime.now()
+    end_date1 = end_date.date()
+   
+    start_date = end_date - datetime.timedelta(days=1 * number_of_days)
+    start_date1 = start_date.date()
+    
+    data_link = f"api/v7/convert?q={currency1}_{currency2}&compact-ultra&date={start_date1}&endDate={end_date1}&apiKey={KEY}"
+    url = BASE_URL + data_link
+    # Access the result key in the json file
+    data_returned = get(url).json()
+    try:
+        stated_values = data_returned["results"][f"{currency1}_{currency2}"]["val"]
+        print("Your currency performance is illustrated below: ")
+        print(f"Date\t \tValue of {currency1} to {currency2}")
+        for key, value in stated_values.items():
+            print(str(key) +"\t"+ str(value))
+    except:
+        print(colorRep("[[red_background]]You have entered an incorrect currency identity, check out the list of countries to get your information[[stop_color]]"))
+
+
 def get_countries(currencies):
     """
     Gets the list of countries avialable in the url
     """
     # list of countries provided in the API documentation
-    countries_link = (
-        f"api/v7/countries?apiKey={KEY}"
-    )
+    countries_link = f"api/v7/countries?apiKey={KEY}"
     url = BASE_URL + countries_link
     # Access the result key in the json file
     data_returned = get(url).json()["results"]
@@ -57,7 +82,7 @@ def exchange_rate(currency1, currency2):
         f"api/v7/convert?q={currency1}_{currency2}&compact-ultra&apiKey={KEY}"
     )
     url = BASE_URL + currency_convert_link
-    
+
     response = get(url)
 
     data = response.json()
@@ -89,7 +114,11 @@ def convert_currencies():
         amount = float(amount)
     # In case of error
     except:
-        print(colorRep("[[red_background]]You have entered an invalid amount[[stop_color]]"))
+        print(
+            colorRep(
+                "[[red_background]]You have entered an invalid amount[[stop_color]]"
+            )
+        )
         return
     converted_amount = rate * amount
     print(f"{amount}{currency1} is equal to {converted_amount:.2f}{currency2}")
@@ -100,14 +129,22 @@ def list_currencies(currencies):
     """
     List the returned currencies
     """
-    typewriter(colorRep("[[green]]Getting the list of available currencies...\n[[white]]"))
+    typewriter(
+        colorRep(
+            "[[green]]Getting the list of available currencies...\n[[white]]"
+        )
+    )
     print()
-    typewriter(colorRep("Column 1 displays [[red]]IDENTITY[[white]] of currencies.\n"))
+    typewriter(
+        colorRep("Column 1 displays [[red]]IDENTITY[[white]] of currencies.\n")
+    )
     typewriter(
         colorRep("Column 2 displays [[red]]NAMES[[white]] of currencies.\n")
     )
     typewriter(
-        colorRep("Column 3 displays [[red]]SYMBOLS[[white]] of the currencies.\n")
+        colorRep(
+            "Column 3 displays [[red]]SYMBOLS[[white]] of the currencies.\n"
+        )
     )
 
     # loop through the returned tuple
@@ -119,26 +156,25 @@ def list_currencies(currencies):
             "currencySymbol", ""
         )  # Return value if found and "" if not existing
         print(
-            colorRep(f"[[blue]]{identity}[[white]] - {name} - [[red]]{symbol}[[white]]")
+            colorRep(
+                f"[[blue]]{identity}[[white]] - {name} - [[red]]{symbol}[[white]]"
+            )
         )
 
 
 def get_currencies():
     """
-    Connect the base url and the currency link
-    Get the json file
-    list the values found in the returned
+    Returns the currencies in 
+    identity, common name and symbol colums
     """
     # list of currencies provided in the API documentation
     currency_link = f"api/v7/currencies?apiKey={KEY}"
     url = BASE_URL + currency_link
-
     # Access the result key in the json file
     data = get(url).json()["results"]
     # Convert the returned values to a list
     data = list(data.items())
     data.sort()
-
     return data
 
 
@@ -149,11 +185,14 @@ def start_app():
     Continues the program in the path chosen
     """
     currencies = get_currencies()
-    
+
     print("Welcome to MyCash...\n")
-    typewriter(colorRep("[[blue_background]]The Currency Master.[[stop_color]][[white]]"))
-    print()
-    print("What will you like to do today?\n")
+    typewriter(
+        colorRep(
+            "[[blue_background]]The Currency Master.[[stop_color]][[white]]"
+        )
+    )
+    print("\nWhat will you like to do today?\n")
 
     typewriter(
         colorRep(
@@ -172,7 +211,12 @@ def start_app():
     )
     typewriter(
         colorRep(
-            "Press [[red]]4[[white]] to [[red]]GET[[white]] a list of available countries.\n\n"
+            "Press [[red]]4[[white]] to [[red]]GET[[white]] a list of available countries.\n"
+        )
+    )
+    typewriter(
+        colorRep(
+            "Press [[red]]5[[white]] to [[red]]VIEW[[white]] performance data of selected currencies over 8 days.\n\n"
         )
     )
 
@@ -181,7 +225,7 @@ def start_app():
             colorRep("Choose an option or press [[red]]q[[white]] to quit.\n")
         )
 
-        if answer == "q":
+        if answer.lower() == "q":
             typewriter("Thank you for using MyCash...\n")
             typewriter(colorRep("[[blue]]SEE YOU NEXT TIME.[[white]]\n"))
             break
@@ -199,6 +243,8 @@ def start_app():
         elif answer == "4":
             clear_screen()
             get_countries(currencies)
+        elif answer == "5":
+            get_history()
         else:
             print(colorRep("[[red]]You have made an invalid choice.[[white]]"))
 
@@ -216,7 +262,6 @@ def register_user(name):
     typewriter("...\n")
     typewriter("...\n")
     typewriter(colorRep(f"[[green]]You are now a registered user.\n[[white]]"))
-    start_app()
 
 
 def check_status(name):
@@ -237,18 +282,12 @@ def check_status(name):
         print("Registering new user...")
         register_user(name)
 
-    if name in registered_names:
-        start_app()
-    
 
 def sign_in():
     """
     Takes in username
-    calls to check if username is registered
     """
-    username = input(
-        "Enter your username: \n"
-    )  # Retained as user types it in for proper verification of user
+    username = input("Enter your username: \n")
     check_status(username)
 
 
@@ -258,7 +297,9 @@ def main():
     """
     print_art()
     sign_in()
+    start_app()
 
 
 if __name__ == "__main__":
     main()
+
