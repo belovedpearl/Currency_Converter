@@ -20,7 +20,7 @@ SHEET = GSPREAD_CLIENT.open("currency_converter")
 
 
 # URL for the get request
-BASE_URL = "https://free.currconv.com/"
+CURRENCY_CONVERTER_URL = "https://free.currconv.com/"
 
 # Get API key saved in the var environment
 KEY = os.environ["API_KEY"]
@@ -42,7 +42,7 @@ def get_history():
     start_date1 = start_date.date()
     
     data_link = f"api/v7/convert?q={currency1}_{currency2}&compact-ultra&date={start_date1}&endDate={end_date1}&apiKey={KEY}"
-    url = BASE_URL + data_link
+    url = CURRENCY_CONVERTER_URL + data_link
     # Access the result key in the json file
     data_returned = get(url).json()
     try:
@@ -52,21 +52,22 @@ def get_history():
         for key, value in stated_values.items():
             print(str(key) +"\t"+ str(value))
     except:
-        print(colorRep("[[red_background]]You have entered an incorrect currency identity, check out the list of countries to get your information[[stop_color]]"))
+        print(colorRep("[[red_background]]You have entered an incorrect currency identity, check out the list of currencies for help[[stop_color]]"))
 
 
 def get_countries(currencies):
     """
     Gets the list of countries avialable in the url
     """
+    typewriter(colorRep("[[green]]Getting the list of countries...[[stop_color]]\n\n"))
     # list of countries provided in the API documentation
     countries_link = f"api/v7/countries?apiKey={KEY}"
-    url = BASE_URL + countries_link
+    url = CURRENCY_CONVERTER_URL + countries_link
     # Access the result key in the json file
     data_returned = get(url).json()["results"]
     # Convert the returned values to a list
     data_returned = list(data_returned.items())
-
+    
     for data in data_returned:
         # Access the specific country name
         print(data[1]["name"])
@@ -81,7 +82,7 @@ def exchange_rate(currency1, currency2):
     currency_convert_link = (
         f"api/v7/convert?q={currency1}_{currency2}&compact-ultra&apiKey={KEY}"
     )
-    url = BASE_URL + currency_convert_link
+    url = CURRENCY_CONVERTER_URL + currency_convert_link
 
     response = get(url)
 
@@ -169,7 +170,7 @@ def get_currencies():
     """
     # list of currencies provided in the API documentation
     currency_link = f"api/v7/currencies?apiKey={KEY}"
-    url = BASE_URL + currency_link
+    url = CURRENCY_CONVERTER_URL + currency_link
     # Access the result key in the json file
     data = get(url).json()["results"]
     # Convert the returned values to a list

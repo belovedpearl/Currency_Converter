@@ -7,10 +7,10 @@ os.system("clear")
 """ ANSI color codes """
 COLORS = {\
     "black": "\033[0;30m",
-    "red": "\033[0;31m",
-    "green": "\033[32m",
+    "red": "\u001b[31;1m",
+    "green": "\u001b[32;1m",
     "blue": "\u001b[34;1m",
-    "white": "\u001b[37m",
+    "white": "\u001b[37;1m",
     "black_background": "\u001b[40m",
     "red_background": "\033[41m",
     "blue_background": "\u001b[44;1m",
