@@ -61,33 +61,39 @@ def get_history():
     url = CURRENCY_CONVERTER_URL + data_link
     # Access the result key in the json file
     data_returned = get(url).json()
-    # Check if right data is returned
-    if data_returned["status"] == 400:
+    # Check for error in data returned
+    if "error" in data_returned.keys():
         typewriter(colorRep("[[red]]You have provided invalid currencies.\n[[stop_color]]"))
+        typewriter(
+                colorRep(
+                    "[[red_background]]Check out the list of currencies for help\n[[stop_color]]"
+                )
+            )
         return
-    try:
-        stated_values = data_returned["results"][f"{currency1}_{currency2}"][
-            "val"
-        ]
-        typewriter(
-            colorRep(
-                "[[green]]Your currency performance is illustrated below: [[stop_color]]\n"
+    else:
+        try:
+            stated_values = data_returned["results"][f"{currency1}_{currency2}"][
+                "val"
+            ]
+            typewriter(
+                colorRep(
+                    "[[green]]Your currency performance is illustrated below: [[stop_color]]\n"
+                )
             )
-        )
-        print(f"Date\t \tValue of {currency1} to {currency2}")
-        for key, value in stated_values.items():
-            print(str(key) + "\t" + str(value))
-    except NameError:
-        print(
-            colorRep(
-                "[[red_background]]You have entered an incorrect currency identity.[[stop_color]]\n"
+            print(f"Date\t \tValue of {currency1} to {currency2}")
+            for key, value in stated_values.items():
+                print(str(key) + "\t" + str(value))
+        except NameError:
+            print(
+                 colorRep(
+                    "[[red_background]]You have entered an incorrect currency identity.[[stop_color]]\n"
+                )
             )
-        )
-        typewriter(
-            colorRep(
-                "[[red_background]]Check out the list of currencies for help[[stop_color]]"
+            typewriter(
+                colorRep(
+                    "[[red_background]]Check out the list of currencies for help[[stop_color]]"
+                )
             )
-        )
 
 
 def get_countries(currencies):
