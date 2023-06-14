@@ -5,7 +5,7 @@ import os
 os.system("clear")
 
 """ ANSI color codes """
-COLORS = {\
+COLORS = {
     "black": "\033[0;30m",
     "red": "\u001b[31;1m",
     "green": "\u001b[32;1m",
@@ -14,7 +14,7 @@ COLORS = {\
     "black_background": "\u001b[40m",
     "red_background": "\033[41m",
     "blue_background": "\u001b[44;1m",
-    "stop_color" : "\x1b[0m",
+    "stop_color": "\x1b[0m",
 }
 
 
@@ -30,6 +30,7 @@ def typewriter(message):
         else:
             time.sleep(1)
 
+
 def clear_screen():
     """
     Clears the screen when used
@@ -39,10 +40,10 @@ def clear_screen():
 
 def colorRep(text):
     """
-    Coordinate color rendering 
+    Coordinate color rendering
     """
     for color in COLORS:
-        text = text.replace("[[" + color + "]]",COLORS[color])
+        text = text.replace("[[" + color + "]]", COLORS[color])
     return text
 
 

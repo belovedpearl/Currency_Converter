@@ -63,18 +63,22 @@ def get_history():
     data_returned = get(url).json()
     # Check for error in data returned
     if "error" in data_returned.keys():
-        typewriter(colorRep("[[red]]You have provided invalid currencies.\n[[stop_color]]"))
         typewriter(
-                colorRep(
-                    "[[red_background]]Check out the list of currencies for help\n[[stop_color]]"
-                )
+            colorRep(
+                "[[red]]You have provided invalid currencies.\n[[stop_color]]"
             )
+        )
+        typewriter(
+            colorRep(
+                "[[red_background]]Check out the list of currencies for help\n[[stop_color]]"
+            )
+        )
         return
     else:
         try:
-            stated_values = data_returned["results"][f"{currency1}_{currency2}"][
-                "val"
-            ]
+            stated_values = data_returned["results"][
+                f"{currency1}_{currency2}"
+            ]["val"]
             typewriter(
                 colorRep(
                     "[[green]]Your currency performance is illustrated below: [[stop_color]]\n"
@@ -85,7 +89,7 @@ def get_history():
                 print(str(key) + "\t" + str(value))
         except NameError:
             print(
-                 colorRep(
+                colorRep(
                     "[[red_background]]You have entered an incorrect currency identity.[[stop_color]]\n"
                 )
             )
@@ -132,8 +136,16 @@ def exchange_rate(currency1, currency2):
     data = response.json()
     # Check for incorrect or unlisted currency
     if data["results"] == {}:
-        print(colorRep("[[red_background]]Invalid currencies provided[[stop_color]]\n"))
-        print(colorRep("[[red_background]]Check out the list of currencies for help.[[stop_color]]"))
+        print(
+            colorRep(
+                "[[red_background]]Invalid currencies provided[[stop_color]]\n"
+            )
+        )
+        print(
+            colorRep(
+                "[[red_background]]Check out the list of currencies for help.[[stop_color]]"
+            )
+        )
         return
     # Get the rate value into a list
     rate = list(data.values())[1][currency1 + "_" + currency2]["val"]
