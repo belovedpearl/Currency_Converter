@@ -44,10 +44,10 @@ def get_history():
     except (ValueError, TypeError) as e:
         print(colorRep(f"[[red]]{e} is not a valid integer! [[stop_color]]"))
         return
-    if number_of_days > 8:
+    if number_of_days < 0 or number_of_days > 8:
         typewriter(
             colorRep(
-                "[[red]]Get performance data for maximum 8days\n[[stop_color]]"
+                "[[red]]Get performance data for 0 - 8 days.\n[[stop_color]]"
             )
         )
         return
@@ -61,6 +61,10 @@ def get_history():
     url = CURRENCY_CONVERTER_URL + data_link
     # Access the result key in the json file
     data_returned = get(url).json()
+    # Check if right data is returned
+    if data_returned["status"] == 400:
+        typewriter(colorRep("[[red]]You have provided invalid currencies.\n[[stop_color]]"))
+        return
     try:
         stated_values = data_returned["results"][f"{currency1}_{currency2}"][
             "val"

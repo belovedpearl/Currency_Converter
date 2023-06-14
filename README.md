@@ -76,7 +76,7 @@
 * MyCash as named is  designed to provide real time currency conversion rate to its users.
 It is designed to be an handy tool for users to convert the value of one currency to another . It also provides a convenient and efficient way to perform currency conversions for various needs, it can also be used in financial plannings especially when it involves other currencies.
 
-* It can serve as a tool which help business owners easily understand the rate of different currencies and hence make informed decision. The API used is updated every thirty minutes hence it reflect the true rate of different currencies.#
+* It can serve as a tool which help business owners easily understand the rate of different currencies and hence make informed decision. The API used is updated every thirty minutes hence it reflect the true rate of different currencies.
 
 * Users can also get performance history of a currency compared to another over a period of 8 days as provided by the API used.
 
@@ -253,30 +253,39 @@ Sleep timers are used to give some break in the program
 ### Modules
 
 * Os
+
 Used to regulate the system clear function and also to have access to the environment where the API key is saved.
 
 * Request
+
 Provides a way to send request to the API used by importing get function.
 
 * Regulator
+
 An internal module made as an extra file to regulate the performance of the code and to contain code that does not relate to currency exchange.
 
 * Gspread
+
 Allow access to the attached spreadsheet, it also share data with the spreadsheet.
 
 * Credentials
+
 Imported from google.oauth2.service_account, it holds the configuration data of the spreadsheetand used for authentication for data exchange to take place.
 
 * Json
+
 A built-in package used to work with json data returned from the API.
 
 * Datetime
+
 A built-in package used to manipulate date and times.
 
 * Sys
+
 A bult-in package used to modify elements in the runtime environment. In this project, it was used to print letters within a text in an interactive mode and to force the terminal to force the program to flush the output buffer
 
 * Time
+
 Used to provide function for getting number of seconds to be used in the program.
 
 ---
@@ -305,7 +314,14 @@ Used to provide function for getting number of seconds to be used in the program
 
 * Error in getting performance history when a number greater then the provided number is given.
 
-    * Added an if statement to check for number greater then 8..
+    * Added an if statement to check for number greater then 8.
+
+* System crash when a wrong country identity is provided.
+    * Check if the right data is returned before proceeding.
+
+* Program crash with values leass than zero.
+    * Check for values less than zero before proceeding.
+
 
 ### Unfixed Bugs
  * To my current understanding, there is no unfixed bug
