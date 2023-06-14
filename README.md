@@ -2,7 +2,7 @@
 
 [View code here](https://github.com/belovedpearl/Currency_Converter)
 
-![Project Presentation](assets/images/opening-section.webp)
+![Project Presentation](assets/images/display_pic.webp)
 
 ## View Live Project
 
@@ -145,34 +145,35 @@ Features on the application include:
 #### Opening Section:
 This consist of the title and a caption introducung the user to what the program does.
 
-![Opening Section](assets/images/opening-section.webp)
+![Opening Section](assets/images/opening_section.webp)
 
 #### Username Section:
 It takes in the username and opens up the program if the user is registered. This is done with the aid of an attached spreadsheet found [here](https://docs.google.com/spreadsheets/d/1kxl57ezoU2vcIYNEzAwI6kqMVXdASYTNhHftn92GK0Y/edit#gid=0)
 
-![Username](assets/images/username.webp)
+![Username](assets/images/enter_username.webp)
 
 #### Registration Section:
 The program is designed to automatically detect new user. It checks if the username is present on the worksheet attached, if username is not found, it automatically registers the user to use the program.
 
 
-![Registration](assets/images/newuser.webp)
+![Registration](assets/images/new_user.webp)
 
 #### Choice Section:
 Users are prompted to choose their desired path of operation to achieve a desired result.
 
-![Choice](assets/images/choice.webp)
+![Choice](assets/images/user_choice.webp)
 
 #### Currency performance
-Users can view the performance data of a currency with respect to another over a period of 8 days.
+Users can view the performance data of a currency with respect to another over a period of 8 days as provided by the API used.
 
+![Currency Performance](assets/images/performance_data.webp)
 
 ---
 
 ## Future Features
 
 ---
- * Add visuals and graphs to show a reflection of performance of different currency overtime, this is to properly aid business analyse currency flunctuations and make decisions.
+ * Add visuals and graphs to show a reflection of performance of different currency overtime, this is to create better view of performance data and aid business analysis of currency flunctuations in order to make decisions.
 
  * Improve the performance of the application by updating the API version or changing the API used to have access to more data to reference and display.
 
@@ -195,9 +196,29 @@ Users can view the performance data of a currency with respect to another over a
 
 * Red color was used to highlight a notice of wrong input from user.
 
+![Invalid](assets/images/invalid_input3.webp)
+
+![Invalid](assets/images/invalid_input2.webp)
+
+![Invalid](assets/images/invalid_input.webp)
+
+![Invalid](assets/images/error_value.webp)
+
+![Invalid](assets/images/invalid_input4.webp)
+
 * Blue color was also added to some statements to improve its visual appearance.
 
+![Blue color](assets/images/enter_username.webp)
+
+![Blue color](assets/images/welcome_prompt.webp)
+
+
 * Green color is used to indicate loading a new section successful.
+
+![Green color](assets/images/sucess_stage.webp)
+
+![Green color](assets/images/sucessful_data.webp)
+
 
 
 ---
@@ -266,11 +287,12 @@ An internal module made as an extra file to regulate the performance of the code
 
 * Gspread
 
-Allow access to the attached spreadsheet, it also share data with the spreadsheet.
+Allows access to the attached spreadsheet, it also share data with the spreadsheet.
 
 * Credentials
 
-Imported from google.oauth2.service_account, it holds the configuration data of the spreadsheetand used for authentication for data exchange to take place.
+Imported from google.oauth2.service_account, it holds the 
+spreadsheet data configuration data and used for authentication for data exchange to take place.
 
 * Json
 
@@ -395,14 +417,17 @@ The live link can be found [here](https://git.heroku.com/mycurrency.git/).
 
  * I have written the program and ran it several times on my terminal and it all work fine as expected.
 
-
- ![Local Terminal](assets/images/siteTest/cssVal.webp)
-
 ### Heroku Terminal
- * 
+ * The project was deployed to heroku and tested several times to check for performance and handle errors that might occur.
 
+ Output test of some section is illustrated below:
 
- ![Heroku Terminal](assets/images/siteTest/jshint.webp)
+ ![Country list](assets/images/country_list.webp)
+
+ ![Currency Identity](assets/images/currency_id.webp)
+
+ ![Convert currency](assets/images/convert_curr.webp)
+
 
  I have also tested the code using **Python Checker**.
 
@@ -437,7 +462,7 @@ The live link can be found [here](https://git.heroku.com/mycurrency.git/).
 
 * [ReadMe Table Inspiration](https://github.com/belovedpearl/Green_Space-PP1/blob/main/README.md)
 
-* [Code institute's template](https://github.com/Code-Institute-Org/gitpod-full-template)
+* [Code institute's template](https://githb.com/https://github.com/Code-Institute-Org/p3-template)
 
 * [Typewriter effect](https://youtu.be/2h8e0tXHfk0)
 
@@ -460,9 +485,8 @@ The live link can be found [here](https://git.heroku.com/mycurrency.git/).
 
 * Special thanks to [Adam Boley](https://github.com/AdamBoley/) for his support during the build up of the project.
 
-* A big thank you to my Mentor, **Sandeep Aggarwal**  for the support and through enlightment he provided during the buildup of this project.
+* A big thank you to my Mentor, **Sandeep Aggarwal**  for the support, encouragement and thorough enlightment he provided during the buildup of this project.
 
-* ReadMe layout inspiration from other Code Institute students from #peer-code-review forum and https://github.com/kera-cudmore/readme-examples/blob/main/milestone1-readme.md#development
 
 * Thank you to everyone at **Code Institute** for helping us learn.
 
