@@ -38,7 +38,15 @@ def get_history():
     )
     currency1 = input("What is your base currency?\n").upper()
     currency2 = input("What currency are you checking with?\n").upper()
-    number_of_days = int(input("Enter the number of days to view \n"))
+    number_of_days = input("Enter the number of days to view \n")
+    try:
+        number_of_days = int(number_of_days)
+    except (ValueError, TypeError) as e:
+        print(f"{e} is not a valid integer! ")
+        return
+    if number_of_days > 8:
+        typewriter(colorRep("[[red]]We provide performance data for maximum 8 days...\n[[stop_color]]"))
+        return
     end_date = datetime.datetime.now()
     end_date1 = end_date.date()
 
@@ -53,14 +61,19 @@ def get_history():
         stated_values = data_returned["results"][f"{currency1}_{currency2}"][
             "val"
         ]
-        print("Your currency performance is illustrated below: ")
+        typewriter(colorRep("[[green]]Your currency performance is illustrated below: [[stop_color]]\n"))
         print(f"Date\t \tValue of {currency1} to {currency2}")
         for key, value in stated_values.items():
             print(str(key) + "\t" + str(value))
     except:
         print(
             colorRep(
-                "[[red_background]]You have entered an incorrect currency identity, check out the list of currencies for help[[stop_color]]"
+                "[[red_background]]You have entered an incorrect currency identity.[[stop_color]]\n"
+            )
+        )
+        typewriter(
+            colorRep(
+                "[[red_background]]Check out the list of currencies for help[[stop_color]]"
             )
         )
 
