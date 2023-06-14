@@ -35,6 +35,7 @@
 * [Technology, Frameworks and Programs](#technology-frameworks-and-programs)
      * [Language](#language)
      * [Frameworks and Programs](#frameworks-and-programs)
+     * [Modules](#modules)
 
 * [Bugs](#bugs)
      * [Fixed Bugs](#fixed-bugs)
@@ -75,7 +76,9 @@
 * MyCash as named is  designed to provide real time currency conversion rate to its users.
 It is designed to be an handy tool for users to convert the value of one currency to another . It also provides a convenient and efficient way to perform currency conversions for various needs, it can also be used in financial plannings especially when it involves other currencies.
 
-* It can serve as a tool which help business owners easily understand the rate of different currencies and hence make informed decision. The API used is updated every thirty minutes hence it reflect the true rate of different currencies.
+* It can serve as a tool which help business owners easily understand the rate of different currencies and hence make informed decision. The API used is updated every thirty minutes hence it reflect the true rate of different currencies.#
+
+* Users can also get performance history of a currency compared to another over a period of 8 days as provided by the API used.
 
 * It also seek to educate its users by providing a list of countries and their currencies. Through it, users are able to buildup understanding about different currencies that exists and thier symbols. 
 
@@ -93,6 +96,7 @@ It is designed to be an handy tool for users to convert the value of one currenc
    * Automatically identifies and register new users.
    * Provide users clear instructions on how to navigate the program.
    * To educate its users on currencies and countries around the world.
+   * Provide performance data of currencies over a period of time.
    
 ---
 
@@ -104,6 +108,7 @@ It is designed to be an handy tool for users to convert the value of one currenc
    * To be able to choose what to do with the program.
    * To be able to view the exchange rate.
    * To be informed if wrong units is provided.
+   * To get performamce data of currencies to be compared.
 
 ---
 
@@ -158,14 +163,20 @@ Users are prompted to choose their desired path of operation to achieve a desire
 
 ![Choice](assets/images/choice.webp)
 
+#### Currency performance
+Users can view the performance data of a currency with respect to another over a period of 8 days.
+
+
 ---
 
 ## Future Features
 
 ---
- * Add visuals and graphs to show a reflection of performance of different currency overtime this is to properly aid business analyse currency flunctuations.
+ * Add visuals and graphs to show a reflection of performance of different currency overtime, this is to properly aid business analyse currency flunctuations and make decisions.
 
- * Add a finanvial forecast feature to futher aid business decisions.
+ * Improve the performance of the application by updating the API version or changing the API used to have access to more data to reference and display.
+
+ * Add a financial forecast feature to futher aid business decisions.
 
  * Add more display feature to improve user experience.
 
@@ -184,7 +195,9 @@ Users are prompted to choose their desired path of operation to achieve a desire
 
 * Red color was used to highlight a notice of wrong input from user.
 
-* Blue color was also added to some statements to improve its appearance.
+* Blue color was also added to some statements to improve its visual appearance.
+
+* Green color is used to indicate loading a new section successful.
 
 
 ---
@@ -201,6 +214,12 @@ Standard terminal font is used to present the project.
 ---
 
 This project is a terminal based program, users are prompted for input to move through the application.
+
+Users are given regular feedback on all request made.
+
+Color text are used to improve readability
+
+Sleep timers are used to give some break in the program
 
 ---
 
@@ -231,6 +250,35 @@ This project is a terminal based program, users are prompted for input to move t
 * Heroku
     * This was used to deploy the web-application.
 
+### Modules
+
+* Os
+Used to regulate the system clear function and also to have access to the environment where the API key is saved.
+
+* Request
+Provides a way to send request to the API used by importing get function.
+
+* Regulator
+An internal module made as an extra file to regulate the performance of the code and to contain code that does not relate to currency exchange.
+
+* Gspread
+Allow access to the attached spreadsheet, it also share data with the spreadsheet.
+
+* Credentials
+Imported from google.oauth2.service_account, it holds the configuration data of the spreadsheetand used for authentication for data exchange to take place.
+
+* Json
+A built-in package used to work with json data returned from the API.
+
+* Datetime
+A built-in package used to manipulate date and times.
+
+* Sys
+A bult-in package used to modify elements in the runtime environment. In this project, it was used to print letters within a text in an interactive mode and to force the terminal to force the program to flush the output buffer
+
+* Time
+Used to provide function for getting number of seconds to be used in the program.
+
 ---
 
 ## Bugs
@@ -248,7 +296,16 @@ This project is a terminal based program, users are prompted for input to move t
     * Changed the path to access the key.
 
 * After deployment, Terminal print appeared in black bluring view.
+
     * Changed the display color after the art to white.
+
+* Error in getting performance history when a decimal or alphabet is provided.
+
+    * Using an except statement to capture the error fixed it.
+
+* Error in getting performance history when a number greater then the provided number is given.
+
+    * Added an if statement to check for number greater then 8..
 
 ### Unfixed Bugs
  * To my current understanding, there is no unfixed bug
@@ -348,6 +405,8 @@ The live link can be found [here](https://git.heroku.com/mycurrency.git/).
 |  Press 1 | List the available currncies and symbols  | P   |
 | Press 2 | Opens up the conversion section   | P   |
 | Press 3 | Gets the exchange rate  of specified currencies printed  | P   |
+| Press 4 | List the available countries| p  |
+| Press 5 | Performance data of currencies | P  | 
 |Press q | Exist the program   | P   |
 |Sign-up section  | Adds the new user username to the worksheet  | P |
 
