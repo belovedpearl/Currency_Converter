@@ -33,7 +33,7 @@ def get_history():
     clear_screen()
     typewriter(
         colorRep(
-            "[[green]]YOU CAN ONLY GET MAXIMUM 8 DAYS HISTORY OF YOUR SELECTED CURRENCIES[[stop_color]]\n"
+            "[[green]]YOU CAN ONLY GET MAXIMUM 8 DAYS HISTORY.[[stop_color]]\n"
         )
     )
     currency1 = input("What is your base currency?\n").upper()
@@ -42,10 +42,14 @@ def get_history():
     try:
         number_of_days = int(number_of_days)
     except (ValueError, TypeError) as e:
-        print(f"{e} is not a valid integer! ")
+        print(colorRep(f"[[red]]{e} is not a valid integer! [[stop_color]]"))
         return
     if number_of_days > 8:
-        typewriter(colorRep("[[red]]We provide performance data for maximum 8 days...\n[[stop_color]]"))
+        typewriter(
+            colorRep(
+                "[[red]]Get performance data for maximum 8days\n[[stop_color]]"
+            )
+        )
         return
     end_date = datetime.datetime.now()
     end_date1 = end_date.date()
@@ -61,11 +65,15 @@ def get_history():
         stated_values = data_returned["results"][f"{currency1}_{currency2}"][
             "val"
         ]
-        typewriter(colorRep("[[green]]Your currency performance is illustrated below: [[stop_color]]\n"))
+        typewriter(
+            colorRep(
+                "[[green]]Your currency performance is illustrated below: [[stop_color]]\n"
+            )
+        )
         print(f"Date\t \tValue of {currency1} to {currency2}")
         for key, value in stated_values.items():
             print(str(key) + "\t" + str(value))
-    except:
+    except NameError:
         print(
             colorRep(
                 "[[red_background]]You have entered an incorrect currency identity.[[stop_color]]\n"
@@ -114,7 +122,8 @@ def exchange_rate(currency1, currency2):
     data = response.json()
     # Check for incorrect or unlisted currency
     if data["results"] == {}:
-        print(colorRep("[[red_background]]Invalid currencies[[stop_color]]"))
+        print(colorRep("[[red_background]]Invalid currencies provided[[stop_color]]\n"))
+        print(colorRep("[[red_background]]Check out the list of currencies for help.[[stop_color]]"))
         return
     # Get the rate value into a list
     rate = list(data.values())[1][currency1 + "_" + currency2]["val"]
@@ -139,7 +148,7 @@ def convert_currencies():
     try:
         amount = float(amount)
     # In case of error
-    except:
+    except ValueError:
         print(
             colorRep(
                 "[[red_background]]You have entered an invalid amount[[stop_color]]"
