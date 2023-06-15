@@ -70,7 +70,8 @@ def get_history():
         )
         typewriter(
             colorRep(
-                "[[red_background]]Check out the list of currencies for help\n[[stop_color]]"
+                "[[red_background]]Check out the list of currencies "
+                "for help\n[[stop_color]]"
             )
         )
         return
@@ -81,7 +82,8 @@ def get_history():
             ]["val"]
             typewriter(
                 colorRep(
-                    "[[green]]Your currency performance is illustrated below: [[stop_color]]\n"
+                    "[[green]]Your currency performance is illustrated "
+                    "below: [[stop_color]]\n"
                 )
             )
             print(f"Date\t \tValue of {currency1} to {currency2}")
@@ -90,12 +92,14 @@ def get_history():
         except NameError:
             print(
                 colorRep(
-                    "[[red_background]]You have entered an incorrect currency identity.[[stop_color]]\n"
+                    "[[red_background]]You have entered an incorrect "
+                    "currency identity.[[stop_color]]\n"
                 )
             )
             typewriter(
                 colorRep(
-                    "[[red_background]]Check out the list of currencies for help[[stop_color]]"
+                    "[[red_background]]Check out the "
+                    "list of currencies for help[[stop_color]]"
                 )
             )
 
@@ -143,7 +147,8 @@ def exchange_rate(currency1, currency2):
         )
         print(
             colorRep(
-                "[[red_background]]Check out the list of currencies for help.[[stop_color]]"
+                "[[red_background]]Check out the "
+                "list of currencies for help.[[stop_color]]"
             )
         )
         return
@@ -173,7 +178,8 @@ def convert_currencies():
     except ValueError:
         print(
             colorRep(
-                "[[red_background]]You have entered an invalid amount[[stop_color]]"
+                "[[red_background]]You have entered "
+                "an invalid amount[[stop_color]]"
             )
         )
         return
@@ -214,7 +220,8 @@ def list_currencies(currencies):
         )  # Return value if found and "" if not existing
         print(
             colorRep(
-                f"[[blue]]{identity}[[white]] - {name} - [[red]]{symbol}[[white]]"
+                f"[[blue]]{identity}[[white]] - {name} - [[red]]{symbol}"
+                "[[white]]"
             )
         )
 
@@ -253,27 +260,32 @@ def start_app():
 
     typewriter(
         colorRep(
-            "Press [[red]]1[[white]] to [[red]]LIST[[white]] the available currencies.\n"
+            "Press [[red]]1[[white]] to [[red]]LIST[[white]] the "
+            "available currencies.\n"
         )
     )
     typewriter(
         colorRep(
-            "Press [[red]]2[[white]] to [[red]]CONVERT[[white]] from one currency to another.\n"
+            "Press [[red]]2[[white]] to [[red]]CONVERT[[white]] from "
+            "one currency to another.\n"
         )
     )
     typewriter(
         colorRep(
-            "Press [[red]]3[[white]] to get [[red]]EXCHANGE[[white]] rate of two currencies.\n"
+            "Press [[red]]3[[white]] to get [[red]]EXCHANGE[[white]] rate "
+            "of two currencies.\n"
         )
     )
     typewriter(
         colorRep(
-            "Press [[red]]4[[white]] to [[red]]GET[[white]] a list of available countries.\n"
+            "Press [[red]]4[[white]] to [[red]]GET[[white]] a "
+            "list of available countries.\n"
         )
     )
     typewriter(
         colorRep(
-            "Press [[red]]5[[white]] to [[red]]VIEW[[white]] performance data of selected currencies over 8 days.\n\n"
+            "Press [[red]]5[[white]] to [[red]]VIEW[[white]] performance "
+            "data of selected currencies over 8 days.\n\n"
         )
     )
 
