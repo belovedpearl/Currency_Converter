@@ -346,7 +346,8 @@ Used to provide function for getting number of seconds to be used in the program
 
 
 ### Unfixed Bugs
- * To my current understanding, there is no unfixed bug
+ * Line too long when tested with code institute validator on **line 60**.
+     * After trying several methods to reduce it, I decided to leave it as it does not affect the functionality of the code.
 
 ---
 
@@ -406,10 +407,10 @@ The live link can be found [here](https://git.heroku.com/mycurrency.git/).
 ### Validator Testing
 
 #### PEP8
-* No errors  were found when passed through the official [W3C Validator check](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbelovedpearl.github.io%2FHistoric_Center_Quiz_PP2%2F)
+* I have validated the code with [CI Pep8](https://pep8ci.herokuapp.com/), only one error was highlighted.
 
 
-![Pep8 Validation](assets/images/siteTest/htmlVal.webp)
+![Pep8 Validation](assets/images/pep8_test.webp)
 
 
 
