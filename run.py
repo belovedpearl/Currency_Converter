@@ -285,7 +285,7 @@ def start_app():
     typewriter(
         colorRep(
             "Press [[red]]5[[white]] to [[red]]VIEW[[white]] performance "
-            "data of selected currencies over 8 days.\n\n"
+            "data of selected currencies from the last 8 days.\n\n"
         )
     )
 
