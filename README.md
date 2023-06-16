@@ -194,6 +194,7 @@ Users can view the performance data of a currency with respect to another over a
 
 
 * I have added red color to the title fonts to make it stand out to user.
+![Title](assets/images/title.webp)
 
 * Red color was used to highlight a notice of wrong input from user.
 
