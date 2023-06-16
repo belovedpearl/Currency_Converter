@@ -456,7 +456,13 @@ The live link can be found [here](https://git.heroku.com/mycurrency.git/).
 
 ## Credits
 
+* [Love Sandwiches setting up your google sheet](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LS101+2021_T1/courseware/293ee9d8ff3542d3b877137ed81b9a5b/071036790a5642f9a6f004f9888b6a45/?child=first)
+
 * [Importing your own module properly](https://youtu.be/GxCXiSk6no)
+
+* [Learn Python](https://youtu.be/rfscVS0vtbw)
+
+* [Using API with python and requests](https://youtu.be/RiuNbAT6nJs)
 
 * [Python style guide](https://google.github.io/styleguide/pyguide.html)
 
