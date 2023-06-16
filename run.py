@@ -145,10 +145,10 @@ def exchange_rate(currency1, currency2):
                 "[[red_background]]Invalid currencies provided[[stop_color]]\n"
             )
         )
-        print(
+        typewriter(
             colorRep(
                 "[[red_background]]Check out the "
-                "list of currencies for help.[[stop_color]]"
+                "list of currencies for help.[[stop_color]]\n"
             )
         )
         return
