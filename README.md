@@ -78,7 +78,7 @@ It is designed to be an handy tool for users to convert the value of one currenc
 
 * It can serve as a tool which help business owners easily understand the rate of different currencies and hence make informed decision. The API used is updated every thirty minutes hence it reflect the true rate of different currencies.
 
-* Users can also get performance history of a currency compared to another over a period of 8 days as provided by the API used.
+* Users can also get performance history of a currency compared to another over a period of 8 days as provided by the API used. The programme is set to display data over the last 8 days.
 
 * It also seek to educate its users by providing a list of countries and their currencies. Through it, users are able to buildup understanding about different currencies that exist and their symbols. 
 
@@ -182,6 +182,8 @@ Users can view the performance data of a currency with respect to another over a
  * Add more display feature to improve user experience.
 
  * Add terminal background to improve user experience.
+
+ * Allow user to choose the performance date they desire.
 
  * Upgrade the application with features for transacting.
 
