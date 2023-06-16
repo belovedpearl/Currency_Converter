@@ -80,7 +80,7 @@ It is designed to be an handy tool for users to convert the value of one currenc
 
 * Users can also get performance history of a currency compared to another over a period of 8 days as provided by the API used.
 
-* It also seek to educate its users by providing a list of countries and their currencies. Through it, users are able to buildup understanding about different currencies that exists and thier symbols. 
+* It also seek to educate its users by providing a list of countries and their currencies. Through it, users are able to buildup understanding about different currencies that exist and their symbols. 
 
 [View Deployed Site Here](https://mycurrency.herokuapp.com/)
  
@@ -107,7 +107,7 @@ It is designed to be an handy tool for users to convert the value of one currenc
    * To easily navigate and understand the application.
    * To be able to choose what to do with the program.
    * To be able to view the exchange rate.
-   * To be informed if wrong units is provided.
+   * To be informed if wrong units are provided.
    * To get performamce data of currencies to be compared.
 
 ---
@@ -118,7 +118,7 @@ It is designed to be an handy tool for users to convert the value of one currenc
 
 The program seeks to provide financial service to its users updating them about exchange rate and values of currencies around the world.
 
-It can be used by business that trade in foreign currencies.
+It can be used by businesses that trade in foreign currencies and individuals that transact in foreign currencies or involved in foreign exchange for personal use or investments.
 
 
 ---
@@ -183,6 +183,7 @@ Users can view the performance data of a currency with respect to another over a
 
  * Add terminal background to improve user experience.
 
+ * Upgrade the application with features for transacting.
 
  
 ---
@@ -192,7 +193,7 @@ Users can view the performance data of a currency with respect to another over a
 ---
 
 
-* I have added red color to the header fonts to make some sections stand out to user.
+* I have added red color to the title fonts to make it stand out to user.
 
 * Red color was used to highlight a notice of wrong input from user.
 
@@ -206,7 +207,7 @@ Users can view the performance data of a currency with respect to another over a
 
 ![Invalid](assets/images/invalid_input4.webp)
 
-* Blue color was also added to some statements to improve its visual appearance.
+* Blue color was also added to some statements to improve its visual appearance and to decorate the title.
 
 ![Blue color](assets/images/enter_username.webp)
 
@@ -238,9 +239,9 @@ This project is a terminal based program, users are prompted for input to move t
 
 Users are given regular feedback on all request made.
 
-Color text are used to improve readability
+Color text are used to improve readability.
 
-Sleep timers are used to give some break in the program
+Sleep timers are used to give some break in the program.
 
 ---
 
@@ -258,11 +259,11 @@ Sleep timers are used to give some break in the program
 
 
 * LucidChart
-    * Used to sketch my thought in planing the project
+    * Used to sketch my thought in planing the project.
 
 
 * Github
-    * To store written code
+    * To store written code.
 
 
 * Gitpod
@@ -287,7 +288,7 @@ An internal module made as an extra file to regulate the performance of the code
 
 * Gspread
 
-Allows access to the attached spreadsheet, it also share data with the spreadsheet.
+Allows access to the attached spreadsheet, it also shares data with the spreadsheet.
 
 * Credentials
 
@@ -304,7 +305,7 @@ A built-in package used to manipulate date and times.
 
 * Sys
 
-A bult-in package used to modify elements in the runtime environment. In this project, it was used to print letters within a text in an interactive mode and to force the terminal to force the program to flush the output buffer
+A bult-in package used to modify elements in the runtime environment. In this project, it was used to print letters within a text in an interactive mode and to force the terminal to force the program to flush the output buffer.
 
 * Time
 
@@ -318,15 +319,15 @@ Used to provide function for getting number of seconds to be used in the program
 
 ### Fixed Bugs
 
-* Rows not appending in the worksheet
+* Rows not appending in the worksheet.
 
-    * Converting my data to list before appending helped fixed this
+    * Converting my data to list before appending helped fixed this.
 
 * Heroku not recognising file containing my key.
 
     * Changed the path to access the key.
 
-* After deployment, Terminal print appeared in black bluring view.
+* After deployment, terminal print appeared in black bluring view.
 
     * Changed the display color after the art to white.
 
@@ -334,14 +335,14 @@ Used to provide function for getting number of seconds to be used in the program
 
     * Using an except statement to capture the error fixed it.
 
-* Error in getting performance history when a number greater then the provided number is given.
+* Error in getting performance history when a number greater than the provided number is given.
 
-    * Added an if statement to check for number greater then 8.
+    * Added an if statement to check for number greater than 8.
 
 * System crash when a wrong country identity is provided.
     * Check if the right data is returned before proceeding.
 
-* Program crash with values leass than zero.
+* Program crash with values less than zero.
     * Check for values less than zero before proceeding.
 
 
@@ -428,11 +429,6 @@ The live link can be found [here](https://git.heroku.com/mycurrency.git/).
  ![Currency Identity](assets/images/currency_id.webp)
 
  ![Convert currency](assets/images/convert_curr.webp)
-
-
- I have also tested the code using **Python Checker**.
-
- ![Python Checker](assets/images/python-checker.webp)
  
 
 
